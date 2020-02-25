@@ -1,9 +1,18 @@
+import React, {ReactNode} from 'react'
+
 import Header from './Header'
 
-const Layout = ({children, title}) => (
+interface Props {
+  title?: string
+  children: ReactNode
+}
+
+const Layout = ({children, title}: Props) => (
   <div className="body">
     <Header />
+
     {title && <h1>{title}</h1>}
+
     {children}
 
     <style jsx>{`

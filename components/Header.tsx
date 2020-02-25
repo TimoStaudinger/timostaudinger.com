@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from 'next/link'
 
 const linkStyle = {
@@ -6,7 +7,7 @@ const linkStyle = {
 
 const Header = () => (
   <div className="header">
-    <div className="spacer" />
+    <div className="title">Timo M. Staudinger</div>
 
     <Link href="/">
       <a style={linkStyle}>Home</a>
@@ -25,7 +26,8 @@ const Header = () => (
         margin-left: auto;
         margin-bottom: 20px;
       }
-      .spacer {
+
+      .title {
         flex: 1;
       }
     `}</style>

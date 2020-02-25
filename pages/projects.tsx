@@ -1,7 +1,9 @@
-import Layout from '../components/Layout'
+import React from 'react'
 import Link from 'next/link'
 
-const ProjectLink = ({id}) => (
+import Layout from '../components/Layout'
+
+const ProjectLink = ({id}: {id: string}) => (
   <li>
     <Link href={`/projects/[id]`} as={`/projects/${id}`}>
       <a>{id}</a>
