@@ -21,10 +21,14 @@ const Header = () => (
 
     <style jsx>{`
       .header {
-        display: flex;
-        flex-direction: row;
         margin-left: auto;
         margin-bottom: 20px;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        display: flex;
+        flex-direction: row;
       }
 
       .title {
