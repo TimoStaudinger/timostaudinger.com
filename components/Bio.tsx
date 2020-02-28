@@ -8,14 +8,15 @@ const Bio = () => (
       I'm Timo.
     </h1>
     <p className="tagline">
-      I build enterprise apps for humans, and help others do so, too!
+      I build enterprise apps for humans, and I help others doing so as well.
     </p>
 
     <style jsx>
       {`
         .hero {
-          font-size: 2em;
+          font-size: 3em;
           line-height: 1.5;
+          font-weight: 300;
         }
 
         .tagline {
