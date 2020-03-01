@@ -3,3 +3,37 @@
 body {
   font-family: Montserrat;
 }
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+}
+
+a:visited {
+  color: #333;
+}
+a:hover {
+  color: white;
+}
+
+a::after {
+  content: ' ';
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  right: 2px;
+  height: 2px;
+  width: calc(100% + 4px);
+
+  background: #fc466b;
+  background: linear-gradient(to right, #3f5efb, #fc466b);
+
+  transition: all 0.2s;
+
+  z-index: -1;
+}
+
+a:hover::after {
+  height: calc(100% + 4px);
+}
