@@ -20,7 +20,7 @@ a:hover {
 a::after {
   content: ' ';
   position: absolute;
-  bottom: -2px;
+  bottom: 1px;
   left: -2px;
   right: 2px;
   height: 2px;
@@ -35,5 +35,6 @@ a::after {
 }
 
 a:hover::after {
+  bottom: -2px;
   height: calc(100% + 4px);
 }
