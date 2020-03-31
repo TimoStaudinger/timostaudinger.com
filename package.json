@@ -11,7 +11,7 @@
   "dependencies": {
     "@types/node": "^13.7.4",
     "@types/react": "^16.9.22",
-    "next": "^9.2.2",
+    "next": "^9.3.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "typescript": "^3.8.2"
