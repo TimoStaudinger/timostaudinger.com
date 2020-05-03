@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import {getPosts, Post} from '../util/dynamicContent'
 import Showcase from '../components/Showcase'
 
-export const unstable_getStaticProps = async () => {
+export const getStaticProps = async () => {
   const sortedPosts = getPosts().sort((a, b) => a.date.localeCompare(b.date))
   return {props: {posts: sortedPosts}}
 }
