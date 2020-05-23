@@ -13,7 +13,7 @@ const Showcase = ({title, type, content}: Props) => (
     <h2>{title}</h2>
     <ul>
       {content.map((entry) => (
-        <li className="entry">
+        <li className="entry" key={entry.slug}>
           <Link href={`/${type}/[slug]`} as={`/${type}/${entry.slug}`}>
             <a>{entry.title}</a>
           </Link>
