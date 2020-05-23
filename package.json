@@ -38,5 +38,13 @@
     "eslint-plugin-react-hooks": "4.0.2",
     "gray-matter": "^4.0.2",
     "now": "^19.0.1"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "jsxBracketSameLine": false,
+    "trailingComma": "none",
+    "semi": false,
+    "printWidth": 80
   }
 }
