@@ -8,7 +8,7 @@ const Bio = () => (
       I'm Timo.
     </h1>
     <p className="tagline">
-      I build enterprise apps for humans, and I help others doing so as well.
+      I build enterprise apps for humans, not for machines.
     </p>
 
     <style jsx>

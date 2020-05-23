@@ -1,22 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
 
-const linkStyle = {
-  marginRight: 15
-}
-
 const Header = () => (
   <div className="header">
-    <div className="title">Timo M. Staudinger</div>
-
     <Link href="/">
-      <a style={linkStyle}>Home</a>
+      <a className="title">Timo M. Staudinger</a>
     </Link>
+
     <Link href="/projects">
-      <a style={linkStyle}>Projects</a>
+      <a className="link">Projects</a>
     </Link>
     <Link href="/blog">
-      <a style={linkStyle}>Blog</a>
+      <a className="link">Blog</a>
     </Link>
 
     <style jsx>{`
@@ -33,6 +28,12 @@ const Header = () => (
 
       .title {
         flex: 1;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .link {
+        margin-right: 15px;
       }
     `}</style>
   </div>

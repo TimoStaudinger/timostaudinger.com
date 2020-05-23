@@ -2,22 +2,24 @@
 
 body {
   font-family: Montserrat;
+  background-color: rgb(241, 245, 248);
+  color: rgb(16, 42, 66);
 }
 
 a {
   position: relative;
-  text-decoration: none;
-  color: #333;
+  /* text-decoration: none; */
+  color: rgb(16, 42, 66);
 }
 
 a:visited {
-  color: #333;
+  color: rgb(16, 42, 66);
 }
 a:hover {
-  color: white;
+  color: rgb(36, 58, 82);
 }
 
-a::after {
+/* a::after {
   content: ' ';
   position: absolute;
   bottom: 1px;
@@ -37,4 +39,4 @@ a::after {
 a:hover::after {
   bottom: -2px;
   height: calc(100% + 4px);
-}
+} */
