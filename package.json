@@ -16,8 +16,10 @@
     "next": "^9.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "rehype-stringify": "^7.0.0",
     "remark": "^12.0.0",
-    "remark-html": "^11.0.2",
+    "remark-behead": "^2.3.2",
+    "remark-rehype": "^7.0.0",
     "typescript": "^3.9.3"
   },
   "eslintConfig": {
@@ -44,6 +46,7 @@
     "jsxBracketSameLine": false,
     "trailingComma": "none",
     "semi": false,
-    "printWidth": 80
+    "printWidth": 80,
+    "proseWrap": "always"
   }
 }
