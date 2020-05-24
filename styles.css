@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
 
 body {
-  font-family: Montserrat;
+  font-family: Inter;
   background-color: rgb(241, 245, 248);
   color: rgb(16, 42, 66);
 }
@@ -17,6 +17,9 @@ a:visited {
 }
 a:hover {
   color: rgb(36, 58, 82);
+}
+
+h1 {
 }
 
 /* a::after {
