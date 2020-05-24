@@ -4,6 +4,7 @@ import Layout from '../../components/Layout'
 import {Project as ProjectType, getProjects} from '../../util/dynamicContent'
 import renderMarkdown from '../../util/renderMarkdown'
 import ContentBody from '../../components/ContentBody'
+import ContentHeader from '../../components/ContentHeader'
 
 export const getStaticProps = async ({params}: {params: {slug: string}}) => {
   let project = getProjects().find((project) => project.slug === params.slug)
@@ -26,6 +27,7 @@ interface Props {
 
 const Project = ({project}: Props) => (
   <Layout title={project.title}>
+    <ContentHeader {...project} />
     <ContentBody>{project.content}</ContentBody>
   </Layout>
 )

@@ -11,7 +11,7 @@ const Layout = ({children, title}: Props) => (
   <div className="body">
     <Header />
 
-    {title && <h1 className="title">{title}</h1>}
+    {/* {title && <h1 className="title">{title}</h1>} */}
 
     {children}
 
