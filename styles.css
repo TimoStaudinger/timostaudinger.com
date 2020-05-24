@@ -7,40 +7,19 @@ body {
 }
 
 a {
+  text-decoration: none;
   position: relative;
-  /* text-decoration: none; */
-  color: rgb(16, 42, 66);
+  color: rgb(9, 107, 170);
 }
 
 a:visited {
-  color: rgb(16, 42, 66);
+  color: rgb(9, 107, 170);
 }
+
 a:hover {
-  color: rgb(36, 58, 82);
+  color: rgb(0, 68, 114);
 }
 
 p {
   line-height: 1.8;
 }
-
-/* a::after {
-  content: ' ';
-  position: absolute;
-  bottom: 1px;
-  left: -2px;
-  right: 2px;
-  height: 2px;
-  width: calc(100% + 4px);
-
-  background: #fc466b;
-  background: linear-gradient(to right, #3f5efb, #fc466b);
-
-  transition: all 0.2s;
-
-  z-index: -1;
-}
-
-a:hover::after {
-  bottom: -2px;
-  height: calc(100% + 4px);
-} */

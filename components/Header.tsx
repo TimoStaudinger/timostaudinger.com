@@ -30,10 +30,20 @@ const Header = () => (
         flex: 1;
         font-weight: bold;
         text-decoration: none;
+        color: rgb(16, 42, 66);
+      }
+
+      .title:hover {
+        color: rgb(80, 107, 135);
       }
 
       .link {
-        margin-right: 15px;
+        margin-left: 15px;
+        color: rgb(16, 42, 66);
+      }
+
+      .link:hover {
+        color: rgb(80, 107, 135);
       }
     `}</style>
   </div>
