@@ -26,7 +26,7 @@ interface Props {
 }
 
 const Project = ({project}: Props) => (
-  <Layout title={project.title}>
+  <Layout>
     <ContentHeader {...project} />
     <ContentBody>{project.content}</ContentBody>
   </Layout>

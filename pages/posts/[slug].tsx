@@ -18,8 +18,6 @@ interface Props {
   post: PostType
 }
 
-const Post = ({post}: Props) => (
-  <Layout title={post.title}>{post.content}</Layout>
-)
+const Post = ({post}: Props) => <Layout>{post.content}</Layout>
 
 export default Post
