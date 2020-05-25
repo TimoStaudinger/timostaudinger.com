@@ -1,6 +1,35 @@
 import React from 'react'
 import {Content} from '../util/dynamicContent'
 import Link from 'next/link'
+import {
+  Activity,
+  Anchor,
+  Award,
+  Coffee,
+  Eye,
+  Feather,
+  Gift,
+  Heart,
+  Image,
+  PenTool,
+  Zap,
+  Star
+} from 'react-feather'
+
+let placeholderIcons = [
+  Activity,
+  Anchor,
+  Award,
+  Coffee,
+  Eye,
+  Feather,
+  Gift,
+  Heart,
+  Image,
+  PenTool,
+  Zap,
+  Star
+]
 
 interface Props {
   content: Content
@@ -11,7 +40,26 @@ const ContentCard = ({content, type}: Props) => (
   <div className="card" tabIndex={0}>
     <Link href={`/${type}/[slug]`} as={`/${type}/${content.slug}`}>
       <div className="content">
-        <img src={content.previewImage} alt="preview" />
+        {content.previewImage ? (
+          <img src={content.previewImage} alt="preview" />
+        ) : (
+          <div className="placeholder">
+            <div className="placeholderContent">
+              {Array.from(Array(100))
+                .map(
+                  () =>
+                    placeholderIcons[
+                      Math.floor(Math.random() * placeholderIcons.length)
+                    ]
+                )
+                .map((Component, i) => (
+                  <span className="placeholderIcon" key={i}>
+                    <Component />
+                  </span>
+                ))}
+            </div>
+          </div>
+        )}
 
         <div className="title">{content.title}</div>
 
@@ -32,6 +80,7 @@ const ContentCard = ({content, type}: Props) => (
         overflow: hidden;
         margin-bottom: 20px;
       }
+
       .card:hover {
         box-shadow: 0 0 3px 2px rgba(80, 107, 135, 0.5);
         transform: scale(1.02);
@@ -53,6 +102,23 @@ const ContentCard = ({content, type}: Props) => (
         color: rgb(80, 107, 135);
         margin: 15px;
         margin-top: 0;
+      }
+
+      .placeholder {
+        height: 100px;
+        overflow: hidden;
+        width: 120%;
+        position: relative;
+      }
+      .placeholderContent {
+        transform: rotate(-20deg);
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        color: rgb(218, 228, 237);
+      }
+      .placeholderIcon {
+        margin: 2px;
       }
 
       @media screen and (min-width: 500px) {
