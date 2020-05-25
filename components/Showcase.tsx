@@ -14,7 +14,7 @@ const Showcase = ({title, type, content}: Props) => (
 
     <div className="contentGrid">
       {content.map((entry) => (
-        <ContentCard content={entry} type={type} />
+        <ContentCard key={entry.slug} content={entry} type={type} />
       ))}
     </div>
 

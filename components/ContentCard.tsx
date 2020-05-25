@@ -13,7 +13,17 @@ import {
   Image,
   PenTool,
   Zap,
-  Star
+  Star,
+  AtSign,
+  BookOpen,
+  CloudLightning,
+  Code,
+  Cpu,
+  Headphones,
+  Hash,
+  GitBranch,
+  Map,
+  Radio
 } from 'react-feather'
 
 let placeholderIcons = [
@@ -28,7 +38,17 @@ let placeholderIcons = [
   Image,
   PenTool,
   Zap,
-  Star
+  Star,
+  AtSign,
+  BookOpen,
+  CloudLightning,
+  Code,
+  Cpu,
+  Headphones,
+  Hash,
+  GitBranch,
+  Map,
+  Radio
 ]
 
 interface Props {
@@ -45,13 +65,8 @@ const ContentCard = ({content, type}: Props) => (
         ) : (
           <div className="placeholder">
             <div className="placeholderContent">
-              {Array.from(Array(100))
-                .map(
-                  () =>
-                    placeholderIcons[
-                      Math.floor(Math.random() * placeholderIcons.length)
-                    ]
-                )
+              {Array.from(Array(200))
+                .map((_, i) => placeholderIcons[i % placeholderIcons.length])
                 .map((Component, i) => (
                   <span className="placeholderIcon" key={i}>
                     <Component />
@@ -81,6 +96,18 @@ const ContentCard = ({content, type}: Props) => (
         margin-bottom: 20px;
       }
 
+      @media screen and (min-width: 500px) {
+        .card {
+          flex: 0 1 calc(50% - 15px);
+        }
+      }
+
+      @media screen and (min-width: 700px) {
+        .card {
+          flex: 0 1 calc(33% - 15px);
+        }
+      }
+
       .card:hover {
         box-shadow: 0 0 3px 2px rgba(80, 107, 135, 0.5);
         transform: scale(1.02);
@@ -107,30 +134,20 @@ const ContentCard = ({content, type}: Props) => (
       .placeholder {
         height: 100px;
         overflow: hidden;
-        width: 120%;
+        width: 150%;
         position: relative;
       }
+
       .placeholderContent {
         transform: rotate(-20deg);
         position: absolute;
-        top: -30px;
-        left: -30px;
+        top: -120px;
+        left: -120px;
         color: rgb(218, 228, 237);
       }
+
       .placeholderIcon {
         margin: 2px;
-      }
-
-      @media screen and (min-width: 500px) {
-        .card {
-          flex: 0 1 calc(50% - 15px);
-        }
-      }
-
-      @media screen and (min-width: 700px) {
-        .card {
-          flex: 0 1 calc(33% - 15px);
-        }
       }
     `}</style>
   </div>
