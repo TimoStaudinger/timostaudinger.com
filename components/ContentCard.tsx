@@ -23,7 +23,7 @@ const ContentCard = ({content, type}: Props) => (
       .card {
         flex: 0 1 100%;
 
-        // background: rgb(218, 228, 237);
+        background: white;
         transition: all 0.2s;
 
         box-shadow: 0 0 3px 1px rgba(80, 107, 135, 0.2);
