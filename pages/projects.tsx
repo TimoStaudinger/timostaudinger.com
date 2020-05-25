@@ -12,7 +12,7 @@ const ProjectLink = ({id}: {id: string}) => (
 )
 
 const Projects = () => (
-  <Layout title="Projects">
+  <Layout>
     <ul>
       <ProjectLink id="Iris" />
       <ProjectLink id="Sprite" />
