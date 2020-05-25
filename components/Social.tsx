@@ -2,6 +2,7 @@ import React from 'react'
 import Github from './icons/Github'
 import Twitter from './icons/Twitter'
 import LinkedIn from './icons/LinkedIn'
+import StackOverflow from './icons/StackOverflow'
 
 const Social = () => (
   <div className="social">
@@ -32,6 +33,15 @@ const Social = () => (
       target="_new"
     >
       <LinkedIn />
+    </a>
+
+    <a
+      href="https://stackoverflow.com/users/3836229/timo"
+      tabIndex={0}
+      className="icon stackoverflow"
+      target="_new"
+    >
+      <StackOverflow />
     </a>
 
     <div className="spacer" />
@@ -88,6 +98,18 @@ const Social = () => (
         color: rgb(0, 119, 181);
         background: rgba(0, 119, 181, 0.1);
         border-color: rgba(0, 119, 181, 0.5);
+        outline: none;
+      }
+
+      .stackoverflow:hover {
+        color: rgb(254, 122, 22);
+        background: rgba(254, 122, 22, 0.1);
+      }
+
+      .stackoverflow:focus {
+        color: #fe7a16;
+        background: rgba(254, 122, 22, 0.1);
+        border-color: rgba(254, 122, 22, 0.5);
         outline: none;
       }
 
