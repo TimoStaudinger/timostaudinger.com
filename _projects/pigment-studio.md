@@ -5,6 +5,7 @@ excerpt:
   'PIGMENTstudio helps you design and maintain a consistent color palette for
   your app.'
 coverImage: '/assets/projects/pigment-studio/cover.png'
+previewImage: '/assets/projects/pigment-studio/preview.png'
 ---
 
 Designing and maintaining a consistent color palette for an application can be a

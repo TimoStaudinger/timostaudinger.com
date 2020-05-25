@@ -1,6 +1,6 @@
 import React from 'react'
 import {Content} from '../util/dynamicContent'
-import Link from 'next/link'
+import ContentCard from './ContentCard'
 
 interface Props {
   title: string
@@ -11,23 +11,22 @@ interface Props {
 const Showcase = ({title, type, content}: Props) => (
   <div className="container">
     <h2>{title}</h2>
-    <ul>
+
+    <div className="contentGrid">
       {content.map((entry) => (
-        <li className="entry" key={entry.slug}>
-          <Link href={`/${type}/[slug]`} as={`/${type}/${entry.slug}`}>
-            <a>{entry.title}</a>
-          </Link>
-        </li>
+        <ContentCard content={entry} type={type} />
       ))}
-    </ul>
+    </div>
 
     <style jsx>{`
       .container {
         margin-top: 30px;
       }
 
-      .entry {
-        margin-top: 10px;
+      .contentGrid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
       }
     `}</style>
   </div>

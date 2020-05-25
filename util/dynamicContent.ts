@@ -7,6 +7,7 @@ export interface Content {
   title: string
   excerpt: string
   coverImage: string
+  previewImage: string
   content: string
 }
 
