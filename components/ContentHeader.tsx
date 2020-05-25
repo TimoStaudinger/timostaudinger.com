@@ -38,7 +38,7 @@ const ContentHeader = ({title, coverImage, excerpt}: Props) => (
       .excerpt {
         margin-top: 30px;
         text-align: center;
-        color: #888;
+        color: rgb(80, 107, 135);
         font-size: 0.9em;
       }
 
