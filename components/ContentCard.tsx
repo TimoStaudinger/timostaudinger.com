@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ContentCard = ({content, type}: Props) => (
-  <div className="card">
+  <div className="card" tabIndex={0}>
     <Link href={`/${type}/[slug]`} as={`/${type}/${content.slug}`}>
       <div className="content">
         <img src={content.previewImage} alt="preview" />
@@ -33,8 +33,13 @@ const ContentCard = ({content, type}: Props) => (
         margin-bottom: 20px;
       }
       .card:hover {
-        z-index: 10;
-        box-shadow: 0 0 3px 1px rgba(80, 107, 135, 0.8);
+        box-shadow: 0 0 3px 2px rgba(80, 107, 135, 0.5);
+        transform: scale(1.02);
+      }
+
+      .card:focus {
+        box-shadow: 0 0 3px 2px rgba(80, 107, 135, 0.5);
+        outline: none;
       }
 
       .title {
