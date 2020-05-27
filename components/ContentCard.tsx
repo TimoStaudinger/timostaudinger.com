@@ -94,6 +94,11 @@ const ContentCard = ({content, type}: Props) => (
         cursor: pointer;
         overflow: hidden;
         margin-bottom: 20px;
+
+        // -webkit-font-smoothing: subpixel-antialiased;
+        // transform: translateZ(0) translate3d(0, 0, 0) perspective(1px);
+        // backface-visibility: hidden;
+        // -webkit-perspective: 1000;
       }
 
       @media screen and (min-width: 500px) {
@@ -108,13 +113,14 @@ const ContentCard = ({content, type}: Props) => (
         }
       }
 
-      .card:hover {
-        box-shadow: 0 0 3px 2px rgba(80, 107, 135, 0.5);
-        transform: scale(1.02);
+      .card:hover,
+      .card:focus:hover {
+        box-shadow: -4px 3px 8px 2px rgba(80, 107, 135, 0.5);
+        transform: translate(2px, -2px);
       }
 
       .card:focus {
-        box-shadow: 0 0 3px 2px rgba(80, 107, 135, 0.5);
+        box-shadow: 0 0 4px 3px rgba(80, 107, 135, 0.3);
         outline: none;
       }
 

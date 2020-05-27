@@ -1,22 +1,20 @@
 import React from 'react'
-import Link from 'next/link'
 
 import Layout from '../components/Layout'
+import {getProjects, Project} from '../util/dynamicContent'
+import Showcase from '../components/Showcase'
 
-const ProjectLink = ({id}: {id: string}) => (
-  <li>
-    <Link href={`/projects/[id]`} as={`/projects/${id}`}>
-      <a>{id}</a>
-    </Link>
-  </li>
-)
+export const getStaticProps = async () => {
+  return {props: {projects: getProjects()}}
+}
 
-const Projects = () => (
+interface Props {
+  projects: Project[]
+}
+
+const Projects = ({projects}: Props) => (
   <Layout>
-    <ul>
-      <ProjectLink id="Iris" />
-      <ProjectLink id="Sprite" />
-    </ul>
+    <Showcase type="projects" content={projects} />
   </Layout>
 )
 

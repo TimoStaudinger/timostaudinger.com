@@ -4,11 +4,18 @@ import Social from './Social'
 const Bio = () => (
   <div>
     <h1 className="welcome">
-      <img src="/assets/profile/timo.png" className="profile" />
+      <img
+        src="/assets/profile/timo.png"
+        alt="Timo's face"
+        className="profile"
+      />
       Hi! I'm Timo.
     </h1>
 
-    <p className="tagline">I build enterprise apps for humans, not machines.</p>
+    <p className="tagline">
+      Human that codes. I live in NYC, and focus on building apps for other
+      humans.
+    </p>
 
     <Social />
     <style jsx>
