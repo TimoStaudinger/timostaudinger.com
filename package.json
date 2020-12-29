@@ -10,18 +10,18 @@
     "deploy": "now"
   },
   "dependencies": {
-    "@types/node": "^14.6.0",
-    "@types/react": "^16.9.47",
+    "@types/node": "^14.14.16",
+    "@types/react": "^17.0.0",
     "gray-matter": "^4.0.2",
-    "next": "^9.5.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-feather": "^2.0.8",
+    "next": "^10.0.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-feather": "^2.0.9",
     "rehype-stringify": "^8.0.0",
-    "remark": "^12.0.1",
+    "remark": "^13.0.0",
     "remark-behead": "^2.3.3",
-    "remark-rehype": "^7.0.0",
-    "typescript": "^3.9.5"
+    "remark-rehype": "^8.0.0",
+    "typescript": "^4.1.3"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -30,16 +30,16 @@
     }
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "3.10.1",
-    "@typescript-eslint/parser": "3.10.1",
+    "@typescript-eslint/eslint-plugin": "4.11.1",
+    "@typescript-eslint/parser": "4.11.1",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.7.0",
-    "eslint-config-react-app": "^5.2.1",
+    "eslint": "^7.16.0",
+    "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "5.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "4.1.0"
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "4.2.0"
   },
   "prettier": {
     "bracketSpacing": false,
