@@ -13,8 +13,8 @@ const Bio = () => (
     </h1>
 
     <p className="tagline">
-      Human that codes. I live in NYC, and focus on building apps for other
-      humans.
+      I live in NYC, and focus on making enterprise applications more
+      accessible, usable, useful, and fun. Reach out for a chat!
     </p>
 
     <Social />
@@ -48,11 +48,15 @@ const Bio = () => (
         }
 
         .tagline {
+          margin-left: auto;
+          margin-right: auto;
           margin-bottom: 30px;
           margin-top: 30px;
 
           text-align: center;
           color: rgb(80, 107, 135);
+
+          max-width: 350px;
         }
       `}
     </style>

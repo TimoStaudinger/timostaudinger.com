@@ -15,7 +15,11 @@ const ContentHeader = ({title, coverImage, excerpt}: Props) => (
     <h1 className="title">{title}</h1>
 
     <div className="profile">
-      <img className="profileImage" src="/assets/profile/timo.png" />
+      <img
+        className="profileImage"
+        src="/assets/profile/timo.png"
+        alt="Timo M. Staudinger"
+      />
       <div className="profileContact">
         <div className="profileName">Timo M. Staudinger</div>
         <div className="profileTwitter">
