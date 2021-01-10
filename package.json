@@ -10,10 +10,10 @@
     "deploy": "now"
   },
   "dependencies": {
-    "@types/node": "^14.14.16",
+    "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
     "gray-matter": "^4.0.2",
-    "next": "^10.0.4",
+    "next": "^10.0.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
@@ -30,15 +30,15 @@
     }
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "4.11.1",
-    "@typescript-eslint/parser": "4.11.1",
+    "@typescript-eslint/eslint-plugin": "4.12.0",
+    "@typescript-eslint/parser": "4.12.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.16.0",
+    "eslint": "^7.17.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "5.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "4.2.0"
   },
   "prettier": {
