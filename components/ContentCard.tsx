@@ -89,7 +89,7 @@ const ContentCard = ({content, type}: Props) => (
         background: white;
         transition: all 0.2s;
 
-        box-shadow: 0 0 3px 1px rgba(80, 107, 135, 0.2);
+        // box-shadow: 0 0 3px 1px rgba(80, 107, 135, 0.2);
 
         cursor: pointer;
         overflow: hidden;
@@ -113,14 +113,20 @@ const ContentCard = ({content, type}: Props) => (
         }
       }
 
-      .card:hover,
-      .card:focus:hover {
-        box-shadow: -4px 3px 8px 2px rgba(80, 107, 135, 0.5);
-        transform: translate(2px, -2px);
+      .card:hover {
+        // box-shadow: -4px 3px 8px 2px rgba(80, 107, 135, 0.5);
+        // transform: translate(2px, -2px);
+
+        box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%),
+          0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
       }
 
-      .card:focus {
-        box-shadow: 0 0 4px 3px rgba(80, 107, 135, 0.3);
+      .card:focus,
+      .card:focus-within {
+        // box-shadow: 0 0 4px 3px rgba(80, 107, 135, 0.3);
+        box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%),
+          0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+        background-color: rgb(241, 245, 248);
         outline: none;
       }
 
