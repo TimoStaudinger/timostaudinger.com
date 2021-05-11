@@ -148,8 +148,10 @@ const Uses = () => (
     </ul>
     <h2>Hardware</h2>
     <h3>Desktop PC</h3>
-    My main machine is a home built desktop PC. It currently uses the following
-    components:
+    <p>
+      My main machine is a home built desktop PC. It currently uses the
+      following components:
+    </p>
     <ul>
       <li>
         <a href="https://pcpartpicker.com/product/QKJtt6/amd-ryzen-7-3700x-36-ghz-8-core-processor-100-100000071box">
@@ -195,21 +197,124 @@ const Uses = () => (
         <a href="https://www.amazon.com/dp/B01AW5VGHS/">Night King</a>
       </li>
     </ul>
-    <h3>Audio</h3>
+
+    <h3>On the Go</h3>
+
     <ul>
-      <li>Sennheiser HD 6XX</li>
-      <li>Schiit Magni 3+</li>
-      <li>Schiit Modi 3+</li>
-      <li>Bose Companion 2 Series III</li>
-      <li>Blue Yeti Nano on a Blue Compass boom arm</li>
+      <li>
+        <a href="https://store.google.com/us/category/phones">
+          Google Pixel 4 64 GB
+        </a>
+      </li>
+      <li>
+        <a href="https://www.dell.com/en-us/member/shop/dell-laptops/xps-13-2-in-1-laptop/spd/xps-13-9310-2-in-1-laptop/x29310cto230h">
+          Dell XPS 13 2-in-1 9310
+        </a>
+        <ul>
+          <li>Intel Core i7-1165G7</li>
+          <li>16 GB LPDDR4-4267 memory</li>
+          <li>512 GB NVME SSD</li>
+          <li>13.4" 16:10 FHD+ Touch Display (1920 x 1200)</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://remarkable.com/">reMarkable 2</a> for note-taking
+      </li>
+      <li>
+        <a href="https://www.osprey.com/us/en/product/raptor-14-RAPTOR14S19.html">
+          Osprey Raptor 14
+        </a>{' '}
+        backpack
+      </li>
+    </ul>
+
+    <h3>Audio</h3>
+
+    <ul>
+      <li>
+        <a href="https://drop.com/buy/massdrop-sennheiser-hd6xx">
+          Sennheiser HD 6XX
+        </a>
+      </li>
+      <li>
+        <a href="https://www.schiit.com/products/magni-1">Schiit Magni 3+</a>{' '}
+        and <a href="https://www.schiit.com/products/modi-1">Schiit Modi 3+</a>{' '}
+        as DAC/amp stack
+      </li>
+      <li>
+        <a href="https://www.bose.com/en_us/products/speakers/stereo_speakers/companion-2-series-iii-multimedia-speaker-system.html">
+          Bose Companion 2 Series III
+        </a>
+      </li>
+      <li>
+        <a href="https://www.bluemic.com/en-us/products/yeti-nano/">
+          Blue Yeti Nano
+        </a>{' '}
+        on a{' '}
+        <a href="https://www.bluemic.com/en-us/products/compass/">
+          Blue Compass
+        </a>{' '}
+        boom arm
+      </li>
     </ul>
     <h3>Peripherals and Other Stuff</h3>
     <ul>
-      <li>Logitech G Pro X Superlight</li>
-      <li>Vortex Pok3r</li>
-      <li>MAX Falcon-20</li>
-      <li>Ergotron LX Dual Stacking Tall Pole monitor arm</li>
-      <li>UPLIFT Standing Desk Frame V2 with IKEA Karlby desktop</li>
+      <li>
+        <a href="https://www.logitechg.com/en-us/products/gaming-mice/pro-x-superlight-wireless-mouse.910-005878.html">
+          Logitech G Pro X Superlight
+        </a>{' '}
+        in white
+      </li>
+      <li>
+        <a href="http://www.vortexgear.tw/vortex2_2.asp?kind=47&kind2=220&kind3=&kind4=999">
+          Vortex Pok3r
+        </a>{' '}
+        with Cherry MX Brown switches
+      </li>
+      <li>
+        <a href="https://www.maxkeyboard.com/max-falcon-20-rgb-custom-programmable-mini-macropad-mechanical-keyboard-assembled.html">
+          MAX Falcon-20
+        </a>{' '}
+        number pad
+      </li>
+      <li>
+        <a href="https://www.dell.com/en-us/shop/alienware-38-curved-gaming-monitor-aw3821dw/apd/210-axvg/monitors-monitor-accessories">
+          Alienware AW3821DW
+        </a>{' '}
+        as main screen
+      </li>
+      <li>
+        <a href="https://www.amazon.com/dp/B07ZP647GD">WIMAXIT 13.3" 1080p"</a>{' '}
+        as tiny secondary screen
+      </li>
+      <li>
+        <a href="https://www.ergotron.com/en-us/products/product-details/45-509#/?color=white">
+          Ergotron LX Dual Stacking Tall Pole
+        </a>{' '}
+        monitor arm
+      </li>
+      <li>
+        <a href="https://www.logitech.com/en-us/products/webcams/c920-pro-hd-webcam.html">
+          Logitech C920
+        </a>{' '}
+        webcam
+      </li>
+      <li>
+        <a href="https://www.upliftdesk.com/uplift-v2-standing-desk-frame/">
+          UPLIFT Standing Desk Frame V2
+        </a>{' '}
+        with{' '}
+        <a href="https://www.ikea.com/us/en/p/karlby-countertop-birch-veneer-90335206/">
+          IKEA Karlby
+        </a>{' '}
+        desktop
+      </li>
+      <li>
+        <a href="https://store.google.com/us/product/pixel_stand">
+          Google Pixel Stand
+        </a>{' '}
+        wireless charger
+      </li>
     </ul>
   </Layout>
 )
