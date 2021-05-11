@@ -11,8 +11,8 @@ const Uses = () => (
       coverImage="/assets/uses/cover.png"
     />
     <p>
-      I regularly get asked about what software and hardware I use for my work.
-      Here's an overview I like to send out to them in response.
+      People regularly ask me about what software and hardware I use for my
+      work. I send them this page.
     </p>
     <h2>Editor</h2>
     <ul>

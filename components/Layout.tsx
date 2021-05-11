@@ -19,7 +19,7 @@ const Layout = ({children, showFooter}: Props) => (
 
     {showFooter ? (
       <div className="footer">
-        <div className="social">
+        <div className="footerContent">
           <ProfileCard style={{marginRight: 50, marginBottom: 10}} />
           <Social style={{marginBottom: 10}} />
         </div>
@@ -49,12 +49,10 @@ const Layout = ({children, showFooter}: Props) => (
         background: rgb(235, 236, 236);
       }
 
-      .social {
+      .footerContent {
         display: inline-flex;
-      }
-
-      .footerProfile {
-        margin-right: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     `}</style>
   </>
