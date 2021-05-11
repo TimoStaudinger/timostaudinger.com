@@ -1,4 +1,5 @@
 import React from 'react'
+import ProfileCard from './ProfileCard'
 
 interface Props {
   title: string
@@ -10,29 +11,16 @@ const ContentHeader = ({title, coverImage, excerpt}: Props) => (
   <div>
     {coverImage && <img src={coverImage} alt="Cover" className="coverImage" />}
 
-    <div className="excerpt">{excerpt}</div>
+    <p className="excerpt">{excerpt}</p>
 
     <h1 className="title">{title}</h1>
 
-    <div className="profile">
-      <img
-        className="profileImage"
-        src="/assets/profile/timo.png"
-        alt="Timo M. Staudinger"
-      />
-      <div className="profileContact">
-        <div className="profileName">Timo M. Staudinger</div>
-        <div className="profileTwitter">
-          <a href="https://twitter.com/TimoStaudinger" target="_new">
-            @TimoStaudinger
-          </a>
-        </div>
-      </div>
-    </div>
+    <ProfileCard style={{marginBottom: 50}} />
 
     <style jsx>{`
       .coverImage {
         max-width: 100%;
+        border-radius: 15px;
       }
 
       .title {
@@ -45,34 +33,9 @@ const ContentHeader = ({title, coverImage, excerpt}: Props) => (
         color: rgb(80, 107, 135);
         font-size: 1.2em;
         font-weight: 300;
-        max-width: 60%;
+        max-width: 500px;
         margin-left: auto;
         margin-right: auto;
-      }
-
-      .profile {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 40px;
-      }
-
-      .profileSpacer {
-        flex: 1;
-      }
-
-      .profileName {
-        margin-bottom: 5px;
-      }
-
-      .profileTwitter {
-        font-size: 0.8em;
-      }
-
-      .profileImage {
-        width: 40px;
-        height: 40px;
-        margin-right: 10px;
       }
     `}</style>
   </div>

@@ -1,16 +1,30 @@
 import React, {ReactNode} from 'react'
 
 import Header from './Header'
+import ProfileCard from './ProfileCard'
+import Social from './Social'
 
 interface Props {
   children: ReactNode
+  showFooter?: boolean
 }
 
-const Layout = ({children}: Props) => (
-  <div className="body">
-    <Header />
+const Layout = ({children, showFooter}: Props) => (
+  <>
+    <div className="body">
+      <Header />
 
-    {children}
+      {children}
+    </div>
+
+    {showFooter ? (
+      <div className="footer">
+        <div className="social">
+          <ProfileCard style={{marginRight: 50}} />
+          <Social />
+        </div>
+      </div>
+    ) : null}
 
     <style jsx>{`
       .body {
@@ -24,8 +38,25 @@ const Layout = ({children}: Props) => (
       .title {
         margin-top: 80px;
       }
+
+      .footer {
+        width: 100%;
+        margin-top: 50px;
+        text-align: center;
+        padding: 40px 0;
+
+        background: rgb(235, 236, 236);
+      }
+
+      .social {
+        display: inline-flex;
+      }
+
+      .footerProfile {
+        margin-right: 50px;
+      }
     `}</style>
-  </div>
+  </>
 )
 
 export default Layout

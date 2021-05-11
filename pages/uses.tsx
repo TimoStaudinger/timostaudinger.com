@@ -4,7 +4,7 @@ import ContentHeader from '../components/ContentHeader'
 import Layout from '../components/Layout'
 
 const Uses = () => (
-  <Layout>
+  <Layout showFooter>
     <ContentHeader
       title="Uses"
       excerpt="Software and Hardware That Makes Me Productive"
@@ -195,16 +195,19 @@ const Uses = () => (
         <a href="https://www.amazon.com/dp/B01AW5VGHS/">Night King</a>
       </li>
     </ul>
-    <h2>Peripherals and Other Stuff</h2>
+    <h3>Audio</h3>
     <ul>
-      <li>Logitech G Pro X Superlight</li>
-      <li>Vortex Pok3r</li>
-      <li>MAX Falcon-20</li>
       <li>Sennheiser HD 6XX</li>
       <li>Schiit Magni 3+</li>
       <li>Schiit Modi 3+</li>
       <li>Bose Companion 2 Series III</li>
       <li>Blue Yeti Nano on a Blue Compass boom arm</li>
+    </ul>
+    <h3>Peripherals and Other Stuff</h3>
+    <ul>
+      <li>Logitech G Pro X Superlight</li>
+      <li>Vortex Pok3r</li>
+      <li>MAX Falcon-20</li>
       <li>Ergotron LX Dual Stacking Tall Pole monitor arm</li>
       <li>UPLIFT Standing Desk Frame V2 with IKEA Karlby desktop</li>
     </ul>

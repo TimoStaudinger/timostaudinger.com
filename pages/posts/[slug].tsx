@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import {getPosts, Post as PostType} from '../../util/dynamicContent'
 import ContentHeader from '../../components/ContentHeader'
-import ContentBody from '../../components/ContentBody'
+import MarkdownBody from '../../components/MarkdownBody'
 import renderMarkdown from '../../util/renderMarkdown'
 
 export const getStaticProps = async ({params}: {params: {slug: string}}) => {
@@ -28,7 +28,7 @@ interface Props {
 const Post = ({post}: Props) => (
   <Layout>
     <ContentHeader {...post} />
-    <ContentBody>{post.content}</ContentBody>
+    <MarkdownBody>{post.content}</MarkdownBody>
   </Layout>
 )
 

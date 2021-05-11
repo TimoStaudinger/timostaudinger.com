@@ -4,7 +4,7 @@ interface Props {
   children: string
 }
 
-const ContentBody = ({children}: Props) => {
+const MarkdownBody = ({children}: Props) => {
   return (
     <div>
       <div className="markdown" dangerouslySetInnerHTML={{__html: children}} />
@@ -33,4 +33,4 @@ const ContentBody = ({children}: Props) => {
   )
 }
 
-export default ContentBody
+export default MarkdownBody

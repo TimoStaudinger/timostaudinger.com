@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import {Project as ProjectType, getProjects} from '../../util/dynamicContent'
 import renderMarkdown from '../../util/renderMarkdown'
-import ContentBody from '../../components/ContentBody'
+import MarkdownBody from '../../components/MarkdownBody'
 import ContentHeader from '../../components/ContentHeader'
 
 export const getStaticProps = async ({params}: {params: {slug: string}}) => {
@@ -28,7 +28,7 @@ interface Props {
 const Project = ({project}: Props) => (
   <Layout>
     <ContentHeader {...project} />
-    <ContentBody>{project.content}</ContentBody>
+    <MarkdownBody>{project.content}</MarkdownBody>
   </Layout>
 )
 

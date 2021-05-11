@@ -3,6 +3,7 @@
 body {
   font-family: Inter;
   color: rgb(16, 42, 66);
+  margin: 0;
 }
 
 a {

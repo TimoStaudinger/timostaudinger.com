@@ -22,7 +22,7 @@ const Header = () => (
         margin-left: auto;
         margin-bottom: 20px;
 
-        padding-top: 10px;
+        padding-top: 20px;
         padding-bottom: 10px;
 
         display: flex;
