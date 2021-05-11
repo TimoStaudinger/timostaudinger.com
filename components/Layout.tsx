@@ -20,8 +20,8 @@ const Layout = ({children, showFooter}: Props) => (
     {showFooter ? (
       <div className="footer">
         <div className="social">
-          <ProfileCard style={{marginRight: 50}} />
-          <Social />
+          <ProfileCard style={{marginRight: 50, marginBottom: 10}} />
+          <Social style={{marginBottom: 10}} />
         </div>
       </div>
     ) : null}
@@ -43,7 +43,8 @@ const Layout = ({children, showFooter}: Props) => (
         width: 100%;
         margin-top: 50px;
         text-align: center;
-        padding: 40px 0;
+        padding-top: 20px;
+        padding-bottom: 10px;
 
         background: rgb(235, 236, 236);
       }

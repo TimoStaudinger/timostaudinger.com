@@ -4,8 +4,12 @@ import Twitter from './icons/Twitter'
 import LinkedIn from './icons/LinkedIn'
 import StackOverflow from './icons/StackOverflow'
 
-const Social = () => (
-  <div className="social">
+interface Props {
+  style?: React.CSSProperties
+}
+
+const Social = ({style}: Props) => (
+  <div className="social" style={style}>
     <div className="spacer" />
 
     <a
