@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;700&display=swap');
 
 body {
   font-family: Inter;
@@ -8,15 +8,16 @@ body {
 a {
   text-decoration: none;
   position: relative;
-  color: rgb(9, 107, 170);
-}
-
-a:visited {
-  color: rgb(9, 107, 170);
+  color: rgb(31, 148, 221);
 }
 
 a:hover {
   color: rgb(0, 68, 114);
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 4em;
 }
 
 h2,

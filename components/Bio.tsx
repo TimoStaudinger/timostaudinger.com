@@ -29,8 +29,8 @@ const Bio = () => (
         }
 
         .profile {
-          width: 80px;
-          height: 80px;
+          width: 120px;
+          height: 120px;
           margin-right: 20px;
         }
 
@@ -39,8 +39,6 @@ const Bio = () => (
           align-items: center;
           display: flex;
           justify-content: center;
-          font-weight: 300;
-          font-size: 2.5em;
         }
 
         .spacer {
@@ -57,6 +55,9 @@ const Bio = () => (
           color: rgb(80, 107, 135);
 
           max-width: 350px;
+
+          font-size: 1.2em;
+          font-weight: 300;
         }
       `}
     </style>
