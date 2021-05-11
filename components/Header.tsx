@@ -7,8 +7,8 @@ const Header = () => (
       <a className="title">Timo M. Staudinger</a>
     </Link>
 
-    <Link href="/projects">
-      <a className="link">Projects</a>
+    <Link href="/writing">
+      <a className="link">Writing</a>
     </Link>
     {/* <Link href="/blog">
       <a className="link">Blog</a>

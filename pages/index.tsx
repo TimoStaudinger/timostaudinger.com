@@ -2,20 +2,19 @@ import React from 'react'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
-import {getPosts, Post, Project, getProjects} from '../util/dynamicContent'
+import {getWriting, Writing} from '../util/dynamicContent'
 // import Showcase from '../components/Showcase'
 
 export const getStaticProps = async () => {
-  const sortedPosts = getPosts().sort((a, b) => a.date.localeCompare(b.date))
-  return {props: {posts: sortedPosts, projects: getProjects()}}
+  const sortedPosts = getWriting().sort((a, b) => a.date.localeCompare(b.date))
+  return {props: {writing: getWriting()}}
 }
 
 interface Props {
-  posts: Post[]
-  projects: Project[]
+  writing: Writing[]
 }
 
-const Index = ({posts, projects}: Props) => {
+const Index = ({writing}: Props) => {
   return (
     <Layout>
       <Bio />

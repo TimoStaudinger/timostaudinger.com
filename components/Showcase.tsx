@@ -1,11 +1,11 @@
 import React from 'react'
-import {Content} from '../util/dynamicContent'
+import {Writing} from '../util/dynamicContent'
 import ContentCard from './ContentCard'
 
 interface Props {
   title?: string
   type: string
-  content: Content[]
+  content: Writing[]
 }
 
 const Showcase = ({title, type, content}: Props) => (

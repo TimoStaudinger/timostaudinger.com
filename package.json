@@ -10,8 +10,6 @@
     "deploy": "now"
   },
   "dependencies": {
-    "@types/node": "^15.0.2",
-    "@types/react": "^17.0.5",
     "gray-matter": "^4.0.3",
     "next": "^10.2.0",
     "react": "^17.0.2",
@@ -30,6 +28,8 @@
     }
   },
   "devDependencies": {
+    "@types/node": "^15.0.2",
+    "@types/react": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "4.23.0",
     "@typescript-eslint/parser": "4.23.0",
     "babel-eslint": "^10.1.0",

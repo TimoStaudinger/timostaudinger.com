@@ -1,5 +1,5 @@
 import React from 'react'
-import {Content} from '../util/dynamicContent'
+import {Writing} from '../util/dynamicContent'
 import Link from 'next/link'
 import {
   Activity,
@@ -52,7 +52,7 @@ let placeholderIcons = [
 ]
 
 interface Props {
-  content: Content
+  content: Writing
   type: string
 }
 
