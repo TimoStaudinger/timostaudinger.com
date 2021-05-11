@@ -9,10 +9,13 @@ const Header = () => (
 
     {/* <Link href="/projects">
       <a className="link">Projects</a>
-    </Link>
-    <Link href="/blog">
+    </Link> */}
+    {/* <Link href="/blog">
       <a className="link">Blog</a>
     </Link> */}
+    <Link href="/uses">
+      <a className="link">Uses</a>
+    </Link>
 
     <style jsx>{`
       .header {

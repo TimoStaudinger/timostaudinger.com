@@ -44,6 +44,9 @@ const ContentHeader = ({title, coverImage, excerpt}: Props) => (
         text-align: center;
         color: rgb(80, 107, 135);
         font-size: 0.9em;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .profile {

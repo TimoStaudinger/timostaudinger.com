@@ -2,7 +2,6 @@
 
 body {
   font-family: Inter;
-  /* background-color: rgb(241, 245, 248); */
   color: rgb(16, 42, 66);
 }
 
@@ -20,6 +19,19 @@ a:hover {
   color: rgb(0, 68, 114);
 }
 
-p {
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 50px;
+}
+
+p,
+li {
   line-height: 1.8;
+}
+
+li:not(:last-child) {
+  margin-bottom: 5px;
 }
