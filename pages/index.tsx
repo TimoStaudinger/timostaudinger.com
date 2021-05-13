@@ -6,8 +6,10 @@ import {getWriting, Writing} from '../util/dynamicContent'
 // import Showcase from '../components/Showcase'
 
 export const getStaticProps = async () => {
-  const sortedPosts = getWriting().sort((a, b) => a.date.localeCompare(b.date))
-  return {props: {writing: getWriting()}}
+  const sortedWriting = getWriting().sort((a, b) =>
+    a.date.localeCompare(b.date)
+  )
+  return {props: {writing: sortedWriting}}
 }
 
 interface Props {
