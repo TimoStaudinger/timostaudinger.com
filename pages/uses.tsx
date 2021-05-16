@@ -1,5 +1,6 @@
 import React from 'react'
 import ContentHeader from '../components/ContentHeader'
+import Image from '../components/Image'
 
 import Layout from '../components/Layout'
 
@@ -147,6 +148,9 @@ const Uses = () => (
       </li>
     </ul>
     <h2>Hardware</h2>
+
+    <Image src="/assets/uses/desk.jpg" alt="My desk setup" />
+
     <h3>Desktop PC</h3>
     <p>
       My main machine is a home built desktop PC. It currently uses the
@@ -197,6 +201,8 @@ const Uses = () => (
         <a href="https://www.amazon.com/dp/B01AW5VGHS/">Night King</a>
       </li>
     </ul>
+
+    <Image src="/assets/uses/pc.jpg" alt="My desktop PC" />
 
     <h3>On the Go</h3>
 
@@ -300,6 +306,16 @@ const Uses = () => (
         webcam
       </li>
       <li>
+        <a href="https://store.google.com/us/product/pixel_stand">
+          Google Pixel Stand
+        </a>{' '}
+        wireless charger
+      </li>
+    </ul>
+
+    <h3>Furniture</h3>
+    <ul>
+      <li>
         <a href="https://www.upliftdesk.com/uplift-v2-standing-desk-frame/">
           UPLIFT Standing Desk Frame V2
         </a>{' '}
@@ -310,10 +326,16 @@ const Uses = () => (
         desktop
       </li>
       <li>
-        <a href="https://store.google.com/us/product/pixel_stand">
-          Google Pixel Stand
+        <a href="https://www.hermanmiller.com/products/seating/office-chairs/aeron-chairs/">
+          Herman Miller Aeron Chair
         </a>{' '}
-        wireless charger
+        in size B, graphite color
+      </li>
+      <li>
+        <a href="https://grovemade.com/product/wool-felt-desk-pad/">
+          Grovemade Wool Felt Desk Pad
+        </a>
+        , small size with light shade
       </li>
     </ul>
   </Layout>
