@@ -22,7 +22,7 @@ const Social = ({style}: Props) => (
     </a>
 
     <a
-      href="https://github.com/TimoSta"
+      href="https://github.com/TimoStaudinger"
       tabIndex={0}
       className="icon github"
       target="_new"
@@ -31,7 +31,7 @@ const Social = ({style}: Props) => (
     </a>
 
     <a
-      href="https://www.linkedin.com/in/timostaudinger/"
+      href="https://www.linkedin.com/in/TimoStaudinger/"
       tabIndex={0}
       className="icon linkedin"
       target="_new"
@@ -40,7 +40,7 @@ const Social = ({style}: Props) => (
     </a>
 
     <a
-      href="https://stackoverflow.com/users/3836229/timo"
+      href="https://stackoverflow.com/users/3836229/TimoStaudinger"
       tabIndex={0}
       className="icon stackoverflow"
       target="_new"
