@@ -196,36 +196,6 @@ const Uses = () => (
 
     <Image src="/assets/uses/pc.jpg" alt="My desktop PC" />
 
-    <h3>On the Go</h3>
-
-    <ul>
-      <li>
-        <a href="https://store.google.com/us/category/phones">
-          Google Pixel 4 64 GB
-        </a>
-      </li>
-      <li>
-        <a href="https://www.dell.com/en-us/member/shop/dell-laptops/xps-13-2-in-1-laptop/spd/xps-13-9310-2-in-1-laptop/x29310cto230h">
-          Dell XPS 13 2-in-1 9310
-        </a>
-        <ul>
-          <li>Intel Core i7-1165G7</li>
-          <li>16 GB LPDDR4-4267 memory</li>
-          <li>512 GB NVME SSD</li>
-          <li>13.4" 16:10 FHD+ Touch Display (1920 x 1200)</li>
-        </ul>
-      </li>
-      <li>
-        <a href="https://remarkable.com/">reMarkable 2</a> for note-taking
-      </li>
-      <li>
-        <a href="https://www.osprey.com/us/en/product/raptor-14-RAPTOR14S19.html">
-          Osprey Raptor 14
-        </a>{' '}
-        backpack
-      </li>
-    </ul>
-
     <h3>Audio</h3>
 
     <ul>
@@ -302,6 +272,38 @@ const Uses = () => (
           Google Pixel Stand
         </a>{' '}
         wireless charger
+      </li>
+    </ul>
+    
+    <h3>On the Go</h3>
+    <ul>
+      <li>
+        <a href="https://store.google.com/us/category/phones">
+          Google Pixel 4 64 GB
+        </a>
+      </li>
+      <li>
+        <a href="https://www.dell.com/en-us/member/shop/dell-laptops/xps-13-2-in-1-laptop/spd/xps-13-9310-2-in-1-laptop/x29310cto230h">
+          Dell XPS 13 2-in-1 9310
+        </a>
+        <ul>
+          <li>Intel Core i7-1165G7</li>
+          <li>16 GB LPDDR4-4267 memory</li>
+          <li>512 GB NVME SSD</li>
+          <li>13.4" 16:10 FHD+ Touch Display (1920 x 1200)</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://www.logitech.com/en-us/products/mice/mx-anywhere-3.html">Logitech MX Anywhere 3</a> portable mouse
+      </li>
+      <li>
+        <a href="https://remarkable.com/">reMarkable 2</a> for note-taking
+      </li>
+      <li>
+        <a href="https://www.osprey.com/us/en/product/raptor-14-RAPTOR14S19.html">
+          Osprey Raptor 14
+        </a>{' '}
+        backpack
       </li>
     </ul>
 
