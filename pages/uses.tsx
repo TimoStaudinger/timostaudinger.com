@@ -110,7 +110,7 @@ const Uses = () => (
     </ul>
     <h2>Desktop Apps</h2>
     <p>
-      I generally use Windows 10 Home for everything. The following apps are
+      I generally use Windows 11 for everything. The following apps are
       installed on all my machines.
     </p>
     <ul>
@@ -127,14 +127,6 @@ const Uses = () => (
       </li>
       <li>
         <a href="https://www.techsmith.com/screen-capture.html">Snagit</a>
-      </li>
-      <li>
-        <a href="https://www.spotify.com/">Spotify</a>
-      </li>
-      <li>
-        <a href="https://www.microsoft.com/en-us/p/translucenttb/9pf4kz2vn4w9">
-          TranslucentTB
-        </a>
       </li>
       <li>
         <a href="https://docs.microsoft.com/en-us/windows/wsl/">
