@@ -1,4 +1,4 @@
-import remark from 'remark'
+import {remark} from 'remark'
 import remark2rehype from 'remark-rehype'
 import behead from 'remark-behead'
 import html from 'rehype-stringify'
