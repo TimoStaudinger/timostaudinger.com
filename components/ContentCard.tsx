@@ -1,5 +1,4 @@
 import React from 'react'
-import {Writing} from '../util/dynamicContent'
 import Link from 'next/link'
 import {
   Activity,
@@ -25,6 +24,8 @@ import {
   Map,
   Radio
 } from 'react-feather'
+
+import {Writing} from '../util/dynamicContent'
 
 let placeholderIcons = [
   Activity,

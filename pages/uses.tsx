@@ -1,7 +1,7 @@
 import React from 'react'
+
 import ContentHeader from '../components/ContentHeader'
 import Image from '../components/Image'
-
 import Layout from '../components/Layout'
 
 const Uses = () => (
@@ -274,7 +274,7 @@ const Uses = () => (
         wireless charger
       </li>
     </ul>
-    
+
     <h3>On the Go</h3>
     <ul>
       <li>
@@ -294,7 +294,10 @@ const Uses = () => (
         </ul>
       </li>
       <li>
-        <a href="https://www.logitech.com/en-us/products/mice/mx-anywhere-3.html">Logitech MX Anywhere 3</a> portable mouse
+        <a href="https://www.logitech.com/en-us/products/mice/mx-anywhere-3.html">
+          Logitech MX Anywhere 3
+        </a>{' '}
+        portable mouse
       </li>
       <li>
         <a href="https://remarkable.com/">reMarkable 2</a> for note-taking

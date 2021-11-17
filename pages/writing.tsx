@@ -1,6 +1,6 @@
 import React from 'react'
-import ContentHeader from '../components/ContentHeader'
 
+import ContentHeader from '../components/ContentHeader'
 import Layout from '../components/Layout'
 import Showcase from '../components/Showcase'
 import {Writing, getWriting} from '../util/dynamicContent'
