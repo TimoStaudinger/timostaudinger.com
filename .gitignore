@@ -2,3 +2,5 @@ node_modules
 .next
 .now
 yarn-error.log
+
+.env.local
