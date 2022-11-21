@@ -3,17 +3,17 @@ import Link from 'next/link'
 
 const Header = () => (
   <div className="header">
-    <Link href="/">
+    <Link href="/" legacyBehavior>
       <a className="title">Timo M. Staudinger</a>
     </Link>
 
-    <Link href="/writing">
+    <Link href="/writing" legacyBehavior>
       <a className="link">Writing</a>
     </Link>
     {/* <Link href="/blog">
       <a className="link">Blog</a>
     </Link> */}
-    <Link href="/uses">
+    <Link href="/uses" legacyBehavior>
       <a className="link">Uses</a>
     </Link>
 
