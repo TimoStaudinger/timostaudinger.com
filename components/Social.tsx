@@ -1,8 +1,8 @@
 import React from 'react'
 import Github from './icons/Github'
-import Twitter from './icons/Twitter'
 import LinkedIn from './icons/LinkedIn'
 import StackOverflow from './icons/StackOverflow'
+import Mail from './icons/Mail'
 
 interface Props {
   style?: React.CSSProperties
@@ -12,14 +12,14 @@ const Social = ({style}: Props) => (
   <div className="social" style={style}>
     <div className="spacer" />
 
-    <a
+    {/* <a
       href="https://twitter.com/TimoStaudinger"
       tabIndex={0}
       className="icon twitter"
       target="_new"
     >
       <Twitter />
-    </a>
+    </a> */}
 
     <a
       href="https://github.com/TimoStaudinger"
@@ -46,6 +46,15 @@ const Social = ({style}: Props) => (
       target="_new"
     >
       <StackOverflow />
+    </a>
+
+    <a
+      href="mailto:site@timostaudinger.com"
+      tabIndex={0}
+      className="icon mail"
+      target="_new"
+    >
+      <Mail />
     </a>
 
     <div className="spacer" />
@@ -114,6 +123,18 @@ const Social = ({style}: Props) => (
         color: #fe7a16;
         background: rgba(254, 122, 22, 0.1);
         border-color: rgba(254, 122, 22, 0.5);
+        outline: none;
+      }
+
+      .mail:hover {
+        color: rgb(187, 0, 27);
+        background: rgba(187, 0, 27, 0.1);
+      }
+
+      .mail:focus {
+        color: rgb(187, 0, 27);
+        background: rgba(187, 0, 27, 0.1);
+        border-color: rgba(187, 0, 27, 0.5);
         outline: none;
       }
 
