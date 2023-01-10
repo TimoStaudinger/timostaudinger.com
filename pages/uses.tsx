@@ -267,19 +267,13 @@ const Uses = () => (
         </a>{' '}
         webcam
       </li>
-      <li>
-        <a href="https://store.google.com/us/product/pixel_stand">
-          Google Pixel Stand
-        </a>{' '}
-        wireless charger
-      </li>
     </ul>
 
     <h3>On the Go</h3>
     <ul>
       <li>
-        <a href="https://store.google.com/us/category/phones">
-          Google Pixel 4 64 GB
+        <a href="https://store.google.com/us/product/pixel_7_pro">
+          Google Pixel 7 Pro 256 GB
         </a>
       </li>
       <li>
