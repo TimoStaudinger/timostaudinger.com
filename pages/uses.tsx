@@ -252,8 +252,11 @@ const Uses = () => (
         as main screen
       </li>
       <li>
-        <a href="https://www.amazon.com/dp/B07ZP647GD">WIMAXIT 13.3" 1080p"</a>{' '}
-        as tiny secondary screen
+        Two{' '}
+        <a href="https://www.dell.com/en-us/shop/dell-24-monitor-s2421h/apd/210-axhf/monitors-monitor-accessories">
+          Dell S2421H
+        </a>{' '}
+        as secondary screens
       </li>
       <li>
         <a href="https://www.ergotron.com/en-us/products/product-details/45-509#/?color=white">
@@ -262,8 +265,8 @@ const Uses = () => (
         monitor arm
       </li>
       <li>
-        <a href="https://www.logitech.com/en-us/products/webcams/c920-pro-hd-webcam.html">
-          Logitech C920
+        <a href="https://www.logitech.com/en-us/products/webcams/brio-4k-hdr-webcam.html">
+          Logitech Brio
         </a>{' '}
         webcam
       </li>
