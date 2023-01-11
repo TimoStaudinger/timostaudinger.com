@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import {AppProps} from 'next/app'
 import {useRouter} from 'next/router'
+import {Analytics} from '@vercel/analytics/react'
 
 import {logPageview} from '../util/analytics'
 
@@ -20,7 +21,12 @@ const App = ({Component, pageProps}: AppProps) => {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  )
 }
 
 export default App
