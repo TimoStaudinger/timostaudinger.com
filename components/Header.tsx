@@ -7,9 +7,9 @@ const Header = () => (
       <a className="title">Timo M. Staudinger</a>
     </Link>
 
-    <Link href="/writing" legacyBehavior>
+    {/* <Link href="/writing" legacyBehavior>
       <a className="link">Writing</a>
-    </Link>
+    </Link> */}
     {/* <Link href="/blog">
       <a className="link">Blog</a>
     </Link> */}
