@@ -5,9 +5,10 @@ interface Props {
   title: string
   excerpt: string
   coverImage?: string
+  showProfile?: boolean
 }
 
-const ContentHeader = ({title, coverImage, excerpt}: Props) => (
+const ContentHeader = ({title, coverImage, excerpt, showProfile = true}: Props) => (
   <div>
     {coverImage && <img src={coverImage} alt="Cover" className="coverImage" />}
 
@@ -15,7 +16,7 @@ const ContentHeader = ({title, coverImage, excerpt}: Props) => (
 
     <h1 className="title">{title}</h1>
 
-    <ProfileCard style={{marginBottom: 50}} />
+    {showProfile && <ProfileCard style={{marginBottom: 50}} />}
 
     <style jsx>{`
       .coverImage {

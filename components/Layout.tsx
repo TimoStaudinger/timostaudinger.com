@@ -33,6 +33,7 @@ const Layout = ({children, showFooter}: Props) => (
         margin-right: auto;
         padding-left: 20px;
         padding-right: 20px;
+        margin-bottom: 50px;
       }
 
       .title {
@@ -41,7 +42,6 @@ const Layout = ({children, showFooter}: Props) => (
 
       .footer {
         width: 100%;
-        margin-top: 50px;
         text-align: center;
         padding-top: 20px;
         padding-bottom: 10px;
