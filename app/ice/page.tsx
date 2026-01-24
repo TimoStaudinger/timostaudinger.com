@@ -1,3 +1,5 @@
+'use client'
+
 import Layout from "../../components/Layout";
 import ContentHeader from "../../components/ContentHeader";
 import React, { useEffect, useState } from "react";

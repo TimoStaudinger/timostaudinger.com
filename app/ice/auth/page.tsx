@@ -1,6 +1,8 @@
-import ContentHeader from "../../components/ContentHeader";
+'use client'
+
+import ContentHeader from "../../../components/ContentHeader";
 import React from "react";
-import Layout from "../../components/Layout";
+import Layout from "../../../components/Layout";
 
 export default function ICEAuthPage() {
   return (

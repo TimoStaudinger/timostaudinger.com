@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { auth } from "./util/ice";
+import { auth } from "./app/api/ice/_auth";
 
 export async function proxy(req: NextRequest) {
   console.log(req.nextUrl.pathname);
