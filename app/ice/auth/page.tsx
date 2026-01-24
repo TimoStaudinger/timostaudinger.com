@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import ContentHeader from "../../../components/ContentHeader";
 import React from "react";
@@ -8,7 +8,7 @@ export default function ICEAuthPage() {
   return (
     <Layout>
       <ContentHeader
-        title="Enter Password"
+        title="In Case of Emergency"
         excerpt="Emergency Info for Timo M. Staudinger"
         showProfile={false}
       />
