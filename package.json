@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "deploy": "vercel"
+    "start": "next start"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
