@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Layout from "../../components/Layout";
 import ContentHeader from "../../components/ContentHeader";
@@ -53,23 +53,51 @@ export default function ICEPage() {
             </p>
           )}
 
-          {section.children?.map((child: any, cIdx: number) => (
-            <section key={cIdx}>
-              <h3>{child.title}</h3>
+          {section.horizontal ? (
+            <div className="horizontal-children">
+              {section.children?.map((child: any, cIdx: number) => (
+                <section key={cIdx} className="horizontal-child">
+                  <h3>{child.title}</h3>
 
-              {child.tags && (
-                <p>
-                  {child.tags.map(
-                    (tag: { label?: string; value: string }, tIdx: number) => (
-                      <Tag label={tag.label} key={tIdx}>
-                        {tag.value}
-                      </Tag>
-                    ),
+                  {child.tags && (
+                    <p>
+                      {child.tags.map(
+                        (
+                          tag: { label?: string; value: string },
+                          tIdx: number,
+                        ) => (
+                          <Tag label={tag.label} key={tIdx}>
+                            {tag.value}
+                          </Tag>
+                        ),
+                      )}
+                    </p>
                   )}
-                </p>
-              )}
-            </section>
-          ))}
+                </section>
+              ))}
+            </div>
+          ) : (
+            section.children?.map((child: any, cIdx: number) => (
+              <section key={cIdx}>
+                <h3>{child.title}</h3>
+
+                {child.tags && (
+                  <p>
+                    {child.tags.map(
+                      (
+                        tag: { label?: string; value: string },
+                        tIdx: number,
+                      ) => (
+                        <Tag label={tag.label} key={tIdx}>
+                          {tag.value}
+                        </Tag>
+                      ),
+                    )}
+                  </p>
+                )}
+              </section>
+            ))
+          )}
         </section>
       ))}
 
@@ -84,6 +112,17 @@ export default function ICEPage() {
 
           .tags {
             display: inline-block;
+          }
+
+          .horizontal-children {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+          }
+
+          .horizontal-child {
+            flex: 1;
+            min-width: 200px;
           }
         `}
       </style>
