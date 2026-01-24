@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "now"
+    "deploy": "vercel"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
@@ -33,7 +33,6 @@
     "@types/react": "^19.2.7",
     "@typescript-eslint/eslint-plugin": "8.51.0",
     "@typescript-eslint/parser": "8.51.0",
-    "babel-eslint": "^10.1.0",
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.1",
     "eslint-plugin-import": "^2.32.0",

@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import {Writing} from '../util/dynamicContent'
 import ContentCard from './ContentCard'

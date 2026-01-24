@@ -1,8 +1,10 @@
+'use client'
+
 import React from 'react'
 
-import ContentHeader from '../components/ContentHeader'
-import Image from '../components/Image'
-import Layout from '../components/Layout'
+import ContentHeader from '../../components/ContentHeader'
+import Image from '../../components/Image'
+import Layout from '../../components/Layout'
 
 const Uses = () => (
   <Layout showFooter>

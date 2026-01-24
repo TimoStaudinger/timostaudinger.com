@@ -1,20 +1,22 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 
 const Header = () => (
   <div className="header">
-    <Link href="/" legacyBehavior>
-      <a className="title">Timo M. Staudinger</a>
+    <Link href="/" className="title">
+      Timo M. Staudinger
     </Link>
 
-    {/* <Link href="/writing" legacyBehavior>
-      <a className="link">Writing</a>
+    {/* <Link href="/writing" className="link">
+      Writing
     </Link> */}
-    {/* <Link href="/blog">
-      <a className="link">Blog</a>
+    {/* <Link href="/blog" className="link">
+      Blog
     </Link> */}
-    <Link href="/uses" legacyBehavior>
-      <a className="link">Uses</a>
+    <Link href="/uses" className="link">
+      Uses
     </Link>
 
     <style jsx>{`
@@ -29,23 +31,24 @@ const Header = () => (
         flex-direction: row;
       }
 
-      .title {
+      .header :global(.title) {
         flex: 1;
         font-weight: bold;
         text-decoration: none;
         color: rgb(16, 42, 66);
       }
 
-      .title:hover {
+      .header :global(.title:hover) {
         color: rgb(80, 107, 135);
       }
 
-      .link {
+      .header :global(.link) {
         margin-left: 15px;
         color: rgb(16, 42, 66);
+        text-decoration: none;
       }
 
-      .link:hover {
+      .header :global(.link:hover) {
         color: rgb(80, 107, 135);
       }
     `}</style>
