@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "playwright test",
+    "test:update-snapshots": "playwright test --update-snapshots"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
@@ -26,7 +28,8 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^16.1.4",
+    "@next/eslint-plugin-next": "^16.2.1",
+    "@playwright/test": "^1.58.2",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.0.10",
     "@types/react": "^19.2.9",

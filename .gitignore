@@ -6,3 +6,7 @@ yarn-error.log
 .env.local
 
 .idea
+.claude
+
+/test-results/
+/playwright-report/
