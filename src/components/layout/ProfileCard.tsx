@@ -10,7 +10,7 @@ const ProfileCard = ({style}: Props) => (
   <div className="profile" style={style}>
     <img
       className="profileImage"
-      src="/assets/profile/timo.png"
+      src="/assets/profile/timo.jpg"
       alt="Timo M. Staudinger"
     />
     <div className="profileContact">
@@ -46,6 +46,7 @@ const ProfileCard = ({style}: Props) => (
         width: 40px;
         height: 40px;
         margin-right: 10px;
+        border-radius: 50%;
       }
     `}</style>
   </div>
