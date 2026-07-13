@@ -24,21 +24,21 @@ const Social = ({style}: Props) => (
     </a> */}
 
     <a
-      href="https://github.com/TimoStaudinger"
-      tabIndex={0}
-      className="icon github"
-      target="_new"
-    >
-      <Github />
-    </a>
-
-    <a
       href="https://www.linkedin.com/in/TimoStaudinger/"
       tabIndex={0}
       className="icon linkedin"
       target="_new"
     >
       <LinkedIn />
+    </a>
+
+    <a
+      href="https://github.com/TimoStaudinger"
+      tabIndex={0}
+      className="icon github"
+      target="_new"
+    >
+      <Github />
     </a>
 
     <a

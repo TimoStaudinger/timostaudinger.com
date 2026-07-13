@@ -6,7 +6,7 @@ const Bio = () => (
   <div>
     <h1 className="welcome">
       <img
-        src="/assets/profile/timo.png"
+        src="/assets/profile/timo.jpg"
         alt="Timo's face"
         className="profile"
       />
@@ -14,8 +14,9 @@ const Bio = () => (
     </h1>
 
     <p className="tagline">
-      I live in NYC, and focus on making enterprise applications more
-      accessible, usable, useful, and fun. Reach out for a chat!
+      Principal Solutions Engineer at Dynatrace, based in NYC. I help the
+      world&apos;s largest organizations get observability right. Reach out
+      for a chat!
     </p>
 
     <Social />
@@ -33,6 +34,7 @@ const Bio = () => (
           width: 120px;
           height: 120px;
           margin-right: 20px;
+          border-radius: 50%;
         }
 
         .welcome {
@@ -55,7 +57,7 @@ const Bio = () => (
           text-align: center;
           color: rgb(80, 107, 135);
 
-          max-width: 350px;
+          max-width: 440px;
 
           font-size: 1.2em;
           font-weight: 300;

@@ -10,7 +10,9 @@ test.describe('Home page', () => {
   })
 
   test('renders the tagline', async ({page}) => {
-    await expect(page.getByText(/I live in NYC/)).toBeVisible()
+    await expect(
+      page.getByText(/Principal Solutions Engineer at Dynatrace/),
+    ).toBeVisible()
   })
 
   test('renders the profile image', async ({page}) => {
