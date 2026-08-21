@@ -33,6 +33,18 @@ production) to the `src` URL of the RUM JavaScript tag from the
 application's agentless monitoring setup in Dynatrace. When the variable is
 unset — e.g. locally or in CI — no RUM script is loaded.
 
+Server-side traces are exported to Dynatrace via OpenTelemetry
+(`src/instrumentation.ts`, using `@vercel/otel`). Set two variables (in
+Vercel for production):
+
+- `DYNATRACE_OTLP_ENDPOINT` — the environment's OTLP base endpoint, e.g.
+  `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`
+- `DYNATRACE_API_TOKEN` — an access token with the
+  `openTelemetryTrace.ingest` scope (keep it secret — no `NEXT_PUBLIC_`
+  prefix)
+
+When either variable is unset, no tracing is registered.
+
 ## Writing content
 
 Add a new file to `content/writing` with frontmatter fields used by the site:
