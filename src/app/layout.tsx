@@ -1,6 +1,8 @@
 import React from 'react'
 import {Analytics} from '@vercel/analytics/react'
 
+import DynatraceRum from '../components/analytics/DynatraceRum'
+
 import '../styles/globals.css'
 
 export const metadata = {
@@ -51,6 +53,7 @@ export default function RootLayout({
         {children}
         <Analytics />
       </body>
+      <DynatraceRum />
     </html>
   )
 }
