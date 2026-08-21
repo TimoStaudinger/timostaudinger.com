@@ -25,6 +25,14 @@ yarn dev
 yarn build
 ```
 
+## Monitoring
+
+Dynatrace RUM is injected into every page via the agentless JavaScript tag.
+Set `NEXT_PUBLIC_DYNATRACE_SCRIPT_URL` at build time (in Vercel for
+production) to the `src` URL of the RUM JavaScript tag from the
+application's agentless monitoring setup in Dynatrace. When the variable is
+unset — e.g. locally or in CI — no RUM script is loaded.
+
 ## Writing content
 
 Add a new file to `content/writing` with frontmatter fields used by the site:
