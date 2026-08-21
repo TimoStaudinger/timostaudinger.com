@@ -1,5 +1,4 @@
 import React from 'react'
-import {Analytics} from '@vercel/analytics/react'
 
 import DynatraceRum from '../components/analytics/DynatraceRum'
 
@@ -51,7 +50,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{__html: JSON.stringify(personSchema)}}
         />
         {children}
-        <Analytics />
       </body>
       <DynatraceRum />
     </html>
