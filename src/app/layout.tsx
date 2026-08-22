@@ -6,7 +6,10 @@ import '../styles/globals.css'
 
 export const metadata = {
   metadataBase: new URL('https://timostaudinger.com'),
-  title: 'Timo Staudinger',
+  title: {
+    default: 'Timo Staudinger',
+    template: '%s · Timo Staudinger',
+  },
   description:
     "Timo Staudinger is a Principal Solutions Engineer at Dynatrace, helping the world's largest organizations get observability right.",
   openGraph: {
@@ -16,6 +19,12 @@ export const metadata = {
     url: 'https://timostaudinger.com',
     siteName: 'Timo Staudinger',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Timo Staudinger',
+    description:
+      "Timo Staudinger is a Principal Solutions Engineer at Dynatrace, helping the world's largest organizations get observability right.",
   },
 }
 
