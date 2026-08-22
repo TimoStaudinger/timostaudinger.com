@@ -43,8 +43,8 @@ const Layout = ({children, showFooter}: Props) => (
       .footer {
         width: 100%;
         text-align: center;
-        padding-top: 20px;
-        padding-bottom: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
 
         background: rgb(235, 236, 236);
       }
