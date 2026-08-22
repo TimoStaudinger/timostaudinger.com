@@ -14,20 +14,12 @@ const Social = ({style}: Props) => (
   <div className="social" style={style}>
     <div className="spacer" />
 
-    {/* <a
-      href="https://twitter.com/TimoStaudinger"
-      tabIndex={0}
-      className="icon twitter"
-      target="_new"
-    >
-      <Twitter />
-    </a> */}
-
     <a
       href="https://www.linkedin.com/in/TimoStaudinger/"
       tabIndex={0}
       className="icon linkedin"
-      target="_new"
+      target="_blank"
+      rel="noopener"
       aria-label="LinkedIn"
     >
       <LinkedIn />
@@ -40,7 +32,8 @@ const Social = ({style}: Props) => (
       href="https://github.com/TimoStaudinger"
       tabIndex={0}
       className="icon github"
-      target="_new"
+      target="_blank"
+      rel="noopener"
       aria-label="GitHub"
     >
       <Github />
@@ -53,7 +46,8 @@ const Social = ({style}: Props) => (
       href="https://stackoverflow.com/users/3836229/TimoStaudinger"
       tabIndex={0}
       className="icon stackoverflow"
-      target="_new"
+      target="_blank"
+      rel="noopener"
       aria-label="Stack Overflow"
     >
       <StackOverflow />
@@ -66,7 +60,8 @@ const Social = ({style}: Props) => (
       href="mailto:site@timostaudinger.com"
       tabIndex={0}
       className="icon mail"
-      target="_new"
+      target="_blank"
+      rel="noopener"
       aria-label="Email"
     >
       <Mail />
@@ -133,18 +128,6 @@ const Social = ({style}: Props) => (
 
       .mail .tooltip {
         color: rgb(187, 0, 27);
-      }
-
-      .twitter:hover {
-        color: rgba(29, 161, 242);
-        background: rgba(29, 161, 242, 0.1);
-      }
-
-      .twitter:focus {
-        color: rgba(29, 161, 242);
-        background: rgba(29, 161, 242, 0.1);
-        border-color: rgba(29, 161, 242, 0.5);
-        outline: none;
       }
 
       .github:hover {

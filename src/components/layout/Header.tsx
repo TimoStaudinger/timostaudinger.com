@@ -9,12 +9,9 @@ const Header = () => (
       Timo M. Staudinger
     </Link>
 
-    {/* <Link href="/writing" className="link">
-      Writing
-    </Link> */}
-    {/* <Link href="/blog" className="link">
-      Blog
-    </Link> */}
+    <Link href="/about" className="link">
+      About
+    </Link>
     <Link href="/uses" className="link">
       Uses
     </Link>
