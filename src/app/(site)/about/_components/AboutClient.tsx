@@ -44,25 +44,25 @@ const AboutClient = () => (
     <ContentHeader
       title="About"
       excerpt="What I do and how I got here"
-      showProfile={false}
+      coverImage="/assets/about/cover.png"
     />
     <p>
       I&apos;m a Principal Solutions Engineer at Dynatrace in New York. My job
-      is to help very large organizations get observability and AI-driven
-      operations right. Day to day, that means architecture reviews,
-      workshops, demos, and proof-of-value projects with their platform and
-      engineering teams.
+      is to help large global organizations design and improve their
+      observability and operations platforms. Day to day, that means
+      architecture reviews, workshops, demos, and proof-of-value projects with
+      their platform and engineering teams.
     </p>
     <p>
       Before Dynatrace, I spent over ten years building enterprise software in
-      regulated industries. I started out writing reinsurance
-      software in Germany, moved to the US in 2015 to consult for insurance
-      companies, and eventually became a system architect for cloud-native
-      healthcare software. The work I&apos;m most proud of from those years is
-      a Kubernetes reference architecture that now runs at more than ten
-      clients and won me an Innovator of the Year award. I also introduced
-      distributed tracing with OpenTelemetry and used it to hunt down
-      performance problems across microservices. I was usually the person
+      regulated industries. I started out writing reinsurance software in
+      Germany, moved to the US in 2015 to consult for insurance companies, and
+      eventually became a system architect for cloud-native healthcare
+      software. The work I&apos;m most proud of from those years is a
+      Kubernetes reference architecture now used in production by more than
+      ten clients and recognized with an Innovator of the Year award. I also
+      introduced distributed tracing with OpenTelemetry and used it to hunt
+      down performance problems across microservices. I was usually the person
       people called when production was slow and nobody knew why.
     </p>
     <p>
@@ -71,8 +71,13 @@ const AboutClient = () => (
       things in better shape than I found them.
     </p>
     <p>
-      The tools I use most are OpenTelemetry, Kubernetes and OpenShift, Java,
-      TypeScript, Node.js, React, Spring, Kafka, GraphQL, and PostgreSQL.
+      Most of my technical work has centered on observability, distributed
+      systems, Kubernetes, OpenTelemetry, and JVM and JavaScript applications.
+    </p>
+    <p>
+      Outside work, I spend a lot of time running and cycling, exploring New
+      York, and occasionally disappearing somewhere with a motorcycle or a
+      backpack.
     </p>
 
     <h2>Where I&apos;ve been</h2>
@@ -124,6 +129,10 @@ const AboutClient = () => (
         .station {
           flex-direction: column;
           margin-bottom: 15px;
+        }
+
+        .years {
+          flex: none;
         }
       }
     `}</style>
