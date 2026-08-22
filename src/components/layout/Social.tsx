@@ -28,8 +28,12 @@ const Social = ({style}: Props) => (
       tabIndex={0}
       className="icon linkedin"
       target="_new"
+      aria-label="LinkedIn"
     >
       <LinkedIn />
+      <span className="tooltip" aria-hidden="true">
+        LinkedIn
+      </span>
     </a>
 
     <a
@@ -37,8 +41,12 @@ const Social = ({style}: Props) => (
       tabIndex={0}
       className="icon github"
       target="_new"
+      aria-label="GitHub"
     >
       <Github />
+      <span className="tooltip" aria-hidden="true">
+        GitHub
+      </span>
     </a>
 
     <a
@@ -46,8 +54,12 @@ const Social = ({style}: Props) => (
       tabIndex={0}
       className="icon stackoverflow"
       target="_new"
+      aria-label="Stack Overflow"
     >
       <StackOverflow />
+      <span className="tooltip" aria-hidden="true">
+        Stack Overflow
+      </span>
     </a>
 
     <a
@@ -55,8 +67,12 @@ const Social = ({style}: Props) => (
       tabIndex={0}
       className="icon mail"
       target="_new"
+      aria-label="Email"
     >
       <Mail />
+      <span className="tooltip" aria-hidden="true">
+        Email
+      </span>
     </a>
 
     <div className="spacer" />
@@ -68,6 +84,7 @@ const Social = ({style}: Props) => (
       }
 
       .icon {
+        position: relative;
         padding: 15px;
         background: none;
         border: 2px solid rgba(0, 0, 0, 0);
@@ -78,6 +95,44 @@ const Social = ({style}: Props) => (
         cursor: pointer;
         color: rgb(16, 42, 66);
         transition: all 0.2s;
+      }
+
+      .tooltip {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 50%;
+        transform: translate(-50%, -4px);
+        color: rgb(16, 42, 66);
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s, transform 0.2s;
+        z-index: 1;
+      }
+
+      .icon:hover .tooltip,
+      .icon:focus .tooltip {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
+      .linkedin .tooltip {
+        color: rgb(0, 119, 181);
+      }
+
+      .github .tooltip {
+        color: rgb(36, 41, 46);
+      }
+
+      .stackoverflow .tooltip {
+        color: rgb(254, 122, 22);
+      }
+
+      .mail .tooltip {
+        color: rgb(187, 0, 27);
       }
 
       .twitter:hover {
