@@ -1,7 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable both App and Pages Router during migration
-  // This allows /ice routes to stay in pages/ while new routes use app/
+  async redirects() {
+    return [
+      {
+        source: '/writing',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/writing/:slug',
+        destination: '/',
+        permanent: false,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

@@ -15,11 +15,6 @@ const ProfileCard = ({style}: Props) => (
     />
     <div className="profileContact">
       <div className="profileName">Timo M. Staudinger</div>
-      <div className="profileTwitter">
-        <a href="https://twitter.com/TimoStaudinger" target="_new">
-          @TimoStaudinger
-        </a>
-      </div>
     </div>
 
     <style jsx>{`
@@ -36,10 +31,6 @@ const ProfileCard = ({style}: Props) => (
 
       .profileName {
         margin-bottom: 5px;
-      }
-
-      .profileTwitter {
-        font-size: 0.8em;
       }
 
       .profileImage {
