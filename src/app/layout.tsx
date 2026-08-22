@@ -1,6 +1,7 @@
 import React from 'react'
 
 import DynatraceRum from '../components/analytics/DynatraceRum'
+import StyledJsxRegistry from './registry'
 
 import '../styles/globals.css'
 
@@ -49,7 +50,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify(personSchema)}}
         />
-        {children}
+        <StyledJsxRegistry>{children}</StyledJsxRegistry>
       </body>
       <DynatraceRum />
     </html>
