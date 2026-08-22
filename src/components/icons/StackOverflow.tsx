@@ -12,11 +12,10 @@ const StackOverflow = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M2 15V22H22V15" />
-    <path d="M18 18H6" />
-    <path d="M18 15L6.04145 14.0035" />
-    <path d="M18.5772 12.1574L7 9" />
-    <path d="M19.903 10.0125L9 5" />
+    <path d="M3.5 20.8H17.5" />
+    <path d="M4.2 14.6L17.2 17.3" />
+    <path d="M6.2 8.6L18.2 13.9" />
+    <path d="M9.4 3.2L20.5 11.2" />
   </svg>
 )
 
