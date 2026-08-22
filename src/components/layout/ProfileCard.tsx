@@ -15,6 +15,7 @@ const ProfileCard = ({style}: Props) => (
     />
     <div className="profileContact">
       <div className="profileName">Timo M. Staudinger</div>
+      <div className="profileTitle">Principal Solutions Engineer · NYC</div>
     </div>
 
     <style jsx>{`
@@ -31,6 +32,11 @@ const ProfileCard = ({style}: Props) => (
 
       .profileName {
         margin-bottom: 5px;
+      }
+
+      .profileTitle {
+        font-size: 0.8em;
+        color: rgb(80, 107, 135);
       }
 
       .profileImage {
