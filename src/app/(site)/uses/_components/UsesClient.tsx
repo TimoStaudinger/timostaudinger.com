@@ -153,10 +153,10 @@ const UsesClient = () => (
         portable mouse
       </li>
       <li>
-        <a href="https://www.osprey.com/us/en/product/raptor-14-RAPTOR14S19.html">
-          Osprey Raptor 14
+        <a href="https://evergoods.us/products/civic-panel-loader-waxed-canvas">
+          Evergoods Civic Panel Loader 24L
         </a>{' '}
-        backpack
+        in waxed canvas as backpack
       </li>
     </ul>
 
