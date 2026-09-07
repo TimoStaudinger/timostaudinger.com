@@ -156,7 +156,7 @@ const UsesClient = () => (
         <a href="https://evergoods.us/products/civic-panel-loader-waxed-canvas">
           Evergoods Civic Panel Loader 24L
         </a>{' '}
-        in waxed canvas as backpack
+        waxed canvas backpack
       </li>
     </ul>
 
