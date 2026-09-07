@@ -71,7 +71,7 @@ const UsesClient = () => (
     <h3>Computer</h3>
     <ul>
       <li>
-        <a href="https://www.apple.com/macbook-pro/">MacBook Pro 14"</a>
+        <a href="https://www.apple.com/macbook-pro/">MacBook Pro 14" (M4 Pro)</a>
         <ul>
           <li>24 GB unified memory</li>
           <li>512 GB SSD</li>
