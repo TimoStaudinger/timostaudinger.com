@@ -12,7 +12,7 @@ test.describe('Uses page', () => {
 
   test('renders editor section', async ({page}) => {
     await expect(page.getByRole('heading', {name: 'Editor'})).toBeVisible()
-    await expect(page.getByRole('link', {name: 'Visual Studio Code'})).toBeVisible()
+    await expect(page.getByRole('link', {name: 'IntelliJ IDEA'})).toBeVisible()
   })
 
   test('renders hardware section', async ({page}) => {
@@ -24,8 +24,8 @@ test.describe('Uses page', () => {
   })
 
   test('external links open correctly', async ({page}) => {
-    const vscodeLink = page.getByRole('link', {name: 'Visual Studio Code'})
-    await expect(vscodeLink).toHaveAttribute('href', 'https://code.visualstudio.com/')
+    const ideaLink = page.getByRole('link', {name: 'IntelliJ IDEA'})
+    await expect(ideaLink).toHaveAttribute('href', 'https://www.jetbrains.com/idea/')
   })
 
   test('visual regression', async ({page}) => {
