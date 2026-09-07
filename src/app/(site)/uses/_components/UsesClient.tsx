@@ -13,10 +13,7 @@ const UsesClient = () => (
       excerpt="Software and Hardware That Makes Me Productive"
       coverImage="/assets/uses/cover.png"
     />
-    <p>
-      People regularly ask me about what software and hardware I use for my
-      work. I send them this page.
-    </p>
+    <p>A collection of the software, hardware, and gear I use day to day.</p>
     <h2>Editor</h2>
     <ul>
       <li>
