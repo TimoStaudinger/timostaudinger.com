@@ -16,6 +16,11 @@ const sitemap = (): MetadataRoute.Sitemap => [
     changeFrequency: 'monthly',
     priority: 0.5,
   },
+  {
+    url: 'https://timostaudinger.com/say',
+    changeFrequency: 'yearly',
+    priority: 0.3,
+  },
 ]
 
 export default sitemap
