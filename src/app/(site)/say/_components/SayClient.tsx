@@ -114,10 +114,11 @@ const SayClient = () => {
     setPlaying(true)
     for (let chunk = 0; chunk < CHUNKS.length; chunk++) {
       if (id !== run.current) return
-      setActive(
-        SYLLABLES.flatMap((s, i) => (s.chunk === chunk ? [i] : [])),
-      )
-      await speak(CHUNKS[chunk], 0.7)
+      const syllables = SYLLABLES.flatMap((s, i) => (s.chunk === chunk ? [i] : []))
+      await speak(CHUNKS[chunk], 0.7, () => {
+        if (id === run.current) setActive(syllables)
+      })
+      if (id === run.current) setActive([])
       await wait(350)
     }
     finish(id)
