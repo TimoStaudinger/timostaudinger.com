@@ -112,9 +112,12 @@ const SayClient = () => {
     try {
       await audio.play()
       hasRecording.current = true
-      await new Promise<void>((resolve) => {
+      await new Promise<void>((resolve, reject) => {
         audio.onended = () => resolve()
         audio.onpause = () => resolve()
+        // A network or decode failure after playback started; the catch
+        // below falls back to speech.
+        audio.onerror = () => reject(audio.error)
       })
       return true
     } catch {
@@ -382,7 +385,7 @@ const SayClient = () => {
         }
 
         .label.yes {
-          color: rgb(30, 138, 90);
+          color: rgb(21, 115, 74);
         }
 
         .wrong {
