@@ -20,6 +20,17 @@ test.describe('Say page', () => {
     await expect(page.getByRole('button', {name: 'Slowly'})).toBeEnabled()
   })
 
+  for (const name of ['Play', 'Slowly']) {
+    test(`plays the ${name.toLowerCase()} recording with highlights`, async ({page}) => {
+      const button = page.getByRole('button', {name, exact: true})
+      await button.click()
+      await expect(button).toBeDisabled()
+      await expect(page.locator('.syl.on')).toHaveText(/Stau/, {timeout: 3000})
+      await expect(button).toBeEnabled({timeout: 4000})
+      await expect(page.locator('.syl.on')).toHaveCount(0)
+    })
+  }
+
   test('has a dedicated preview image for link unfurls', async ({page}) => {
     const ogImage = page.locator('meta[property="og:image"]')
     await expect(ogImage).toHaveAttribute('content', /\/say\/opengraph-image/)
