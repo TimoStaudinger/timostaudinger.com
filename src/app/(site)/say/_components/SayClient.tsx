@@ -126,8 +126,7 @@ const SayClient = () => {
 
   return (
     <Layout showFooter>
-      <h1 className="visually-hidden">How to say my name</h1>
-      <p className="subtitle">In case you were wondering</p>
+      <h1 className="subtitle">How to say my name</h1>
 
       <section className="stage" aria-label="Pronunciation">
         <div className="name" role="img" aria-label="Timo Staudinger, pronounced TEE-moh SHTOW-ding-uh">
@@ -174,15 +173,6 @@ const SayClient = () => {
       </p>
 
       <style jsx>{`
-        .visually-hidden {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          overflow: hidden;
-          clip: rect(0 0 0 0);
-          white-space: nowrap;
-        }
-
         .subtitle {
           margin: 30px auto 0;
           max-width: 500px;
