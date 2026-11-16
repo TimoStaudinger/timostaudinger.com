@@ -25,6 +25,12 @@ test.describe('Say page', () => {
     await expect(ogImage).toHaveAttribute('content', /\/say\/opengraph-image/)
   })
 
+  test('serves the name recording', async ({request}) => {
+    const res = await request.get('/assets/say/timo-staudinger.mp3')
+    expect(res.status()).toBe(200)
+    expect(res.headers()['content-type']).toContain('audio/mpeg')
+  })
+
   test('visual regression', async ({page}) => {
     await expect(page).toHaveScreenshot('say.png', {
       maxDiffPixelRatio: 0.01,

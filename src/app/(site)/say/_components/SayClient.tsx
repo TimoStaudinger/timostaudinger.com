@@ -30,8 +30,16 @@ const WORDS: Syllable[][] = [
 
 const SYLLABLES = WORDS.flat()
 const CHUNKS = ['Timo', 'Stau', 'dinger']
-// Approximate onset of each syllable (ms) when the full name is spoken.
-const ONSETS = [0, 230, 470, 760, 960]
+// Onset of each syllable (ms), measured from the recording's waveform.
+const RECORDING_ONSETS = [60, 280, 460, 880, 990]
+// Where each "slowly" chunk sits in the recording (ms).
+const RECORDING_CHUNKS: [number, number][] = [
+  [0, 440],
+  [440, 870],
+  [870, 1260],
+]
+// Rough onsets for the speech synthesis fallback.
+const SPEECH_ONSETS = [0, 230, 470, 760, 960]
 
 const MISTAKES = [
   {say: 'Temu', why: 'that’s the shop. It ends in “oh”.'},
@@ -91,17 +99,24 @@ const SayClient = () => {
     return stopAll
   }, [])
 
-  const startHighlights = (id: number) => {
+  const startHighlights = (id: number, onsets: number[]) => {
     if (id !== run.current) return
-    ONSETS.forEach((t, i) => {
+    onsets.forEach((t, i) => {
       timers.current.push(setTimeout(() => setActive([i]), t))
     })
   }
 
+  const getAudio = () => {
+    if (!recording.current) {
+      recording.current = new Audio(RECORDING_SRC)
+      recording.current.preload = 'auto'
+    }
+    return recording.current
+  }
+
   const playRecording = async (onStart: () => void): Promise<boolean> => {
     if (hasRecording.current === false) return false
-    if (!recording.current) recording.current = new Audio(RECORDING_SRC)
-    const audio = recording.current
+    const audio = getAudio()
     audio.currentTime = 0
     audio.onplaying = onStart
     try {
@@ -112,6 +127,28 @@ const SayClient = () => {
         audio.onpause = () => resolve()
         // A network or decode failure after playback started; the catch
         // below falls back to speech.
+        audio.onerror = () => reject(audio.error)
+      })
+      return true
+    } catch {
+      hasRecording.current = false
+      return false
+    }
+  }
+
+  // Plays one slice of the recording, then pauses.
+  const playSegment = async ([start, end]: [number, number]): Promise<boolean> => {
+    if (hasRecording.current === false) return false
+    const audio = getAudio()
+    audio.onplaying = null
+    try {
+      audio.currentTime = start / 1000
+      await audio.play()
+      hasRecording.current = true
+      await new Promise<void>((resolve, reject) => {
+        timers.current.push(setTimeout(() => audio.pause(), end - start))
+        audio.onended = () => resolve()
+        audio.onpause = () => resolve()
         audio.onerror = () => reject(audio.error)
       })
       return true
@@ -133,10 +170,11 @@ const SayClient = () => {
     stopAll()
     const id = run.current
     setPlaying(true)
-    const onStart = () => startHighlights(id)
-    const played = await playRecording(onStart)
+    const played = await playRecording(() => startHighlights(id, RECORDING_ONSETS))
     if (id !== run.current) return
-    if (!played) await speak('Timo Staudinger', 0.85, onStart)
+    if (!played) {
+      await speak('Timo Staudinger', 0.85, () => startHighlights(id, SPEECH_ONSETS))
+    }
     await wait(200)
     finish(id)
   }
@@ -150,7 +188,9 @@ const SayClient = () => {
       setActive(
         SYLLABLES.flatMap((s, i) => (s.chunk === chunk ? [i] : [])),
       )
-      await speak(CHUNKS[chunk], 0.7)
+      const played = await playSegment(RECORDING_CHUNKS[chunk])
+      if (id !== run.current) return
+      if (!played) await speak(CHUNKS[chunk], 0.7)
       await wait(350)
     }
     finish(id)
