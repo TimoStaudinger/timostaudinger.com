@@ -144,7 +144,7 @@ const SayClient = () => {
     <Layout showFooter>
       <ContentHeader
         title="How to Say My Name"
-        excerpt="A quick guide for colleagues, customers, and conference hosts"
+        excerpt="In case you were wondering"
         showProfile={false}
       />
 
