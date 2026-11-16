@@ -6,7 +6,8 @@ test.describe('Say page', () => {
   })
 
   test('renders the page header', async ({page}) => {
-    await expect(page.getByRole('heading', {name: 'How to Say My Name'})).toBeVisible()
+    await expect(page.getByRole('heading', {name: 'How to say my name'})).toBeAttached()
+    await expect(page.getByRole('img', {name: /pronounced TEE-moh SHTOW-ding-uh/})).toBeVisible()
   })
 
   test('shows the phonetic spelling', async ({page}) => {
