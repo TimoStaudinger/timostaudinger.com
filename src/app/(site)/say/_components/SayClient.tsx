@@ -127,6 +127,7 @@ const SayClient = () => {
   return (
     <Layout showFooter>
       <h1 className="visually-hidden">How to say my name</h1>
+      <p className="subtitle">In case you were wondering</p>
 
       <section className="stage" aria-label="Pronunciation">
         <div className="name" role="img" aria-label="Timo Staudinger, pronounced TEE-moh SHTOW-ding-uh">
@@ -182,8 +183,17 @@ const SayClient = () => {
           white-space: nowrap;
         }
 
+        .subtitle {
+          margin: 30px auto 0;
+          max-width: 500px;
+          text-align: center;
+          color: rgb(80, 107, 135);
+          font-size: 1.2em;
+          font-weight: 300;
+        }
+
         .stage {
-          margin-top: 60px;
+          margin-top: 40px;
           text-align: center;
         }
 
