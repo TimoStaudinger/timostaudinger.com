@@ -22,12 +22,29 @@ test.describe('Say page', () => {
 
   for (const name of ['Play', 'Slowly']) {
     test(`plays the ${name.toLowerCase()} recording with highlights`, async ({page}) => {
+      // Highlights are brief, so record each one as it happens instead of
+      // polling for it.
+      await page.evaluate(() => {
+        const seen: string[] = []
+        ;(window as unknown as {seen: string[]}).seen = seen
+        new MutationObserver(() => {
+          const on = document.querySelector('.syl.on .text')?.textContent
+          if (on && seen[seen.length - 1] !== on) seen.push(on)
+        }).observe(document.querySelector('.name')!, {
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['class'],
+        })
+      })
+
       const button = page.getByRole('button', {name, exact: true})
       await button.click()
       await expect(button).toBeDisabled()
-      await expect(page.locator('.syl.on')).toHaveText(/Stau/, {timeout: 3000})
-      await expect(button).toBeEnabled({timeout: 4000})
+      await expect(button).toBeEnabled({timeout: 5000})
       await expect(page.locator('.syl.on')).toHaveCount(0)
+
+      const seen = await page.evaluate(() => (window as unknown as {seen: string[]}).seen)
+      expect(seen).toEqual(['Ti', 'mo', 'Stau', 'ding', 'er'])
     })
   }
 
