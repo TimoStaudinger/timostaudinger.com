@@ -35,6 +35,7 @@ const CHUNKS = ['Timo', 'Stau', 'dinger']
 const ONSETS = [0, 230, 470, 760, 960]
 
 const MISTAKES = [
+  {say: 'Temu', why: 'Not the shopping app. Timo ends in “oh”, as in “go”.'},
   {say: 'TIE-moh', why: 'The i is a long “ee”, like in “Tina”.'},
   {
     say: 'STAW-din-jer',
@@ -43,7 +44,7 @@ const MISTAKES = [
   {say: 'Stow-DING-er', why: 'The stress goes on the first part: STAU-dinger.'},
 ]
 
-const speak = (text: string, rate: number): Promise<void> =>
+const speak = (text: string, rate: number, onStart?: () => void): Promise<void> =>
   new Promise((resolve) => {
     const synth = typeof window !== 'undefined' ? window.speechSynthesis : undefined
     if (!synth) {
@@ -57,6 +58,7 @@ const speak = (text: string, rate: number): Promise<void> =>
       .getVoices()
       .find((v) => v.lang.toLowerCase().replace('_', '-').startsWith('de'))
     if (voice) utterance.voice = voice
+    if (onStart) utterance.onstart = onStart
     utterance.onend = () => resolve()
     utterance.onerror = () => resolve()
     synth.speak(utterance)
@@ -76,29 +78,37 @@ const SayClient = () => {
   const recording = useRef<HTMLAudioElement | null>(null)
   const hasRecording = useRef<boolean | null>(null)
   const timers = useRef<ReturnType<typeof setTimeout>[]>([])
+  // Bumped on every new playback and on unmount, so a stale async loop
+  // stops at its next checkpoint.
+  const run = useRef(0)
 
-  useEffect(() => {
-    // Warm up the voice list, which some browsers load lazily.
-    window.speechSynthesis?.getVoices()
-    return () => {
-      timers.current.forEach(clearTimeout)
-      window.speechSynthesis?.cancel()
-      recording.current?.pause()
-    }
-  }, [])
-
-  const reset = () => {
+  const stopAll = () => {
+    run.current++
     timers.current.forEach(clearTimeout)
     timers.current = []
     window.speechSynthesis?.cancel()
     recording.current?.pause()
   }
 
-  const playRecording = async (): Promise<boolean> => {
+  useEffect(() => {
+    // Warm up the voice list, which some browsers load lazily.
+    window.speechSynthesis?.getVoices()
+    return stopAll
+  }, [])
+
+  const startHighlights = (id: number) => {
+    if (id !== run.current) return
+    ONSETS.forEach((t, i) => {
+      timers.current.push(setTimeout(() => setActive([i]), t))
+    })
+  }
+
+  const playRecording = async (onStart: () => void): Promise<boolean> => {
     if (hasRecording.current === false) return false
     if (!recording.current) recording.current = new Audio(RECORDING_SRC)
     const audio = recording.current
     audio.currentTime = 0
+    audio.onplaying = onStart
     try {
       await audio.play()
       hasRecording.current = true
@@ -113,31 +123,39 @@ const SayClient = () => {
     }
   }
 
-  const playFull = async () => {
-    reset()
-    setPlaying(true)
-    ONSETS.forEach((t, i) => {
-      timers.current.push(setTimeout(() => setActive([i]), t))
-    })
-    const played = await playRecording()
-    if (!played) await speak('Timo Staudinger', 0.85)
-    await wait(200)
+  const finish = (id: number) => {
+    if (id !== run.current) return
+    timers.current.forEach(clearTimeout)
+    timers.current = []
     setActive([])
     setPlaying(false)
   }
 
+  const playFull = async () => {
+    stopAll()
+    const id = run.current
+    setPlaying(true)
+    const onStart = () => startHighlights(id)
+    const played = await playRecording(onStart)
+    if (id !== run.current) return
+    if (!played) await speak('Timo Staudinger', 0.85, onStart)
+    await wait(200)
+    finish(id)
+  }
+
   const playSlow = async () => {
-    reset()
+    stopAll()
+    const id = run.current
     setPlaying(true)
     for (let chunk = 0; chunk < CHUNKS.length; chunk++) {
+      if (id !== run.current) return
       setActive(
         SYLLABLES.flatMap((s, i) => (s.chunk === chunk ? [i] : [])),
       )
       await speak(CHUNKS[chunk], 0.7)
       await wait(350)
     }
-    setActive([])
-    setPlaying(false)
+    finish(id)
   }
 
   return (
@@ -149,7 +167,7 @@ const SayClient = () => {
       />
 
       <section className="stage" aria-label="Pronunciation">
-        <div className="name" aria-label="Timo Staudinger, pronounced TEE-moh SHTOW-ding-uh">
+        <div className="name" role="img" aria-label="Timo Staudinger, pronounced TEE-moh SHTOW-ding-uh">
           {WORDS.map((word, w) => (
             <div className="word" key={w}>
               {word.map((syl, s) => {
@@ -288,7 +306,7 @@ const SayClient = () => {
           font-weight: 500;
           cursor: pointer;
           color: #fff;
-          background: rgb(31, 148, 221);
+          background: rgb(0, 110, 180);
         }
 
         .play:hover {
@@ -296,9 +314,9 @@ const SayClient = () => {
         }
 
         .play.ghost {
-          color: rgb(31, 148, 221);
+          color: rgb(0, 110, 180);
           background: transparent;
-          box-shadow: inset 0 0 0 1.5px rgb(31, 148, 221);
+          box-shadow: inset 0 0 0 1.5px rgb(0, 110, 180);
         }
 
         .play.ghost:hover {
@@ -329,7 +347,7 @@ const SayClient = () => {
 
         .mistakes {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
           gap: 12px;
         }
 
