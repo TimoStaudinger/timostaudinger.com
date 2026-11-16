@@ -8,54 +8,56 @@ interface Syllable {
   text: string
   hint: string
   stress?: boolean
-  // Index of the chunk spoken in "slowly" mode.
-  chunk: number
 }
 
 const WORDS: Syllable[][] = [
   [
-    {text: 'Ti', hint: 'tee', stress: true, chunk: 0},
-    {text: 'mo', hint: 'moh', chunk: 0},
+    {text: 'Ti', hint: 'tee', stress: true},
+    {text: 'mo', hint: 'moh'},
   ],
   [
-    {text: 'Stau', hint: 'shtow', stress: true, chunk: 1},
-    {text: 'ding', hint: 'ding', chunk: 2},
-    {text: 'er', hint: 'uh', chunk: 2},
+    {text: 'Stau', hint: 'shtow', stress: true},
+    {text: 'ding', hint: 'ding'},
+    {text: 'er', hint: 'uh'},
   ],
 ]
 
-const SYLLABLES = WORDS.flat()
-const CHUNKS = ['Timo', 'Stau', 'dinger']
-// Approximate onset of each syllable (ms) when the full name is spoken.
-const ONSETS = [0, 230, 470, 760, 960]
+interface Recording {
+  src: string
+  // [start, end] of each syllable in seconds, measured from the recording.
+  segments: [number, number][]
+}
+
+const RECORDINGS = {
+  full: {
+    src: '/assets/say/timo-staudinger.m4a',
+    segments: [
+      [0.1, 0.22],
+      [0.22, 0.38],
+      [0.5, 0.78],
+      [0.78, 0.9],
+      [0.9, 1.04],
+    ],
+  },
+  slow: {
+    src: '/assets/say/timo-staudinger-slow.m4a',
+    segments: [
+      [0.14, 0.28],
+      [0.28, 0.6],
+      [1.22, 1.64],
+      [1.64, 1.84],
+      [1.84, 2.06],
+    ],
+  },
+} satisfies Record<string, Recording>
+
+type Mode = keyof typeof RECORDINGS
 
 const MISTAKES = [
   {say: 'Temu', why: 'that’s the shop. It ends in “oh”.'},
   {say: 'TIM-oh', why: 'the i sounds like “ee”, not like in “Tim”.'},
   {say: 'STAW-din-jer', why: 'it’s “sht”, and the g stays hard.'},
 ]
-
-const speak = (text: string, rate: number, onStart?: () => void): Promise<void> =>
-  new Promise((resolve) => {
-    const synth = typeof window !== 'undefined' ? window.speechSynthesis : undefined
-    if (!synth) {
-      resolve()
-      return
-    }
-    const utterance = new SpeechSynthesisUtterance(text)
-    utterance.lang = 'de-DE'
-    utterance.rate = rate
-    const voice = synth
-      .getVoices()
-      .find((v) => v.lang.toLowerCase().replace('_', '-').startsWith('de'))
-    if (voice) utterance.voice = voice
-    if (onStart) utterance.onstart = onStart
-    utterance.onend = () => resolve()
-    utterance.onerror = () => resolve()
-    synth.speak(utterance)
-  })
-
-const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const PlayIcon = () => (
   <svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14">
@@ -64,64 +66,61 @@ const PlayIcon = () => (
 )
 
 const SayClient = () => {
-  const [active, setActive] = useState<number[]>([])
+  const [active, setActive] = useState<number | null>(null)
   const [playing, setPlaying] = useState(false)
-  const timers = useRef<ReturnType<typeof setTimeout>[]>([])
-  // Bumped on every new playback and on unmount, so a stale async loop
-  // stops at its next checkpoint.
-  const run = useRef(0)
+  const audio = useRef<Partial<Record<Mode, HTMLAudioElement>>>({})
+  const frame = useRef<number | undefined>(undefined)
 
   const stopAll = () => {
-    run.current++
-    timers.current.forEach(clearTimeout)
-    timers.current = []
-    window.speechSynthesis?.cancel()
-  }
-
-  useEffect(() => {
-    // Warm up the voice list, which some browsers load lazily.
-    window.speechSynthesis?.getVoices()
-    return stopAll
-  }, [])
-
-  const startHighlights = (id: number) => {
-    if (id !== run.current) return
-    ONSETS.forEach((t, i) => {
-      timers.current.push(setTimeout(() => setActive([i]), t))
+    if (frame.current !== undefined) cancelAnimationFrame(frame.current)
+    frame.current = undefined
+    Object.values(audio.current).forEach((el) => {
+      el.pause()
+      el.currentTime = 0
     })
   }
 
-  const finish = (id: number) => {
-    if (id !== run.current) return
-    timers.current.forEach(clearTimeout)
-    timers.current = []
-    setActive([])
-    setPlaying(false)
-  }
-
-  const playFull = async () => {
-    stopAll()
-    const id = run.current
-    setPlaying(true)
-    await speak('Timo Staudinger', 0.85, () => startHighlights(id))
-    await wait(200)
-    finish(id)
-  }
-
-  const playSlow = async () => {
-    stopAll()
-    const id = run.current
-    setPlaying(true)
-    for (let chunk = 0; chunk < CHUNKS.length; chunk++) {
-      if (id !== run.current) return
-      const syllables = SYLLABLES.flatMap((s, i) => (s.chunk === chunk ? [i] : []))
-      await speak(CHUNKS[chunk], 0.7, () => {
-        if (id === run.current) setActive(syllables)
-      })
-      if (id === run.current) setActive([])
-      await wait(350)
+  useEffect(() => {
+    const els = audio.current
+    ;(Object.keys(RECORDINGS) as Mode[]).forEach((mode) => {
+      const el = new Audio(RECORDINGS[mode].src)
+      el.preload = 'auto'
+      els[mode] = el
+    })
+    return () => {
+      stopAll()
+      Object.keys(els).forEach((mode) => delete els[mode as Mode])
     }
-    finish(id)
+  }, [])
+
+  const play = (mode: Mode) => {
+    const el = audio.current[mode]
+    if (!el) return
+    stopAll()
+    const {segments} = RECORDINGS[mode]
+
+    const finish = () => {
+      if (frame.current !== undefined) cancelAnimationFrame(frame.current)
+      frame.current = undefined
+      setActive(null)
+      setPlaying(false)
+    }
+
+    // Follow the playhead, so highlights stay in sync however long the
+    // audio takes to start.
+    const tick = () => {
+      const t = el.currentTime
+      const i = segments.findIndex(([start, end]) => t >= start && t < end)
+      setActive(i === -1 ? null : i)
+      frame.current = requestAnimationFrame(tick)
+    }
+
+    el.onended = finish
+    el.onerror = finish
+    setPlaying(true)
+    el.play().then(() => {
+      frame.current = requestAnimationFrame(tick)
+    }, finish)
   }
 
   return (
@@ -134,7 +133,7 @@ const SayClient = () => {
             <div className="word" key={w}>
               {word.map((syl, s) => {
                 const i = WORDS.slice(0, w).flat().length + s
-                const classes = ['syl', syl.stress ? 'stress' : '', active.includes(i) ? 'on' : '']
+                const classes = ['syl', syl.stress ? 'stress' : '', active === i ? 'on' : '']
                 return (
                   <div className={classes.join(' ')} key={i} aria-hidden="true">
                     <span className="text">{syl.text}</span>
@@ -147,11 +146,11 @@ const SayClient = () => {
         </div>
 
         <div className="controls">
-          <button type="button" className="play" onClick={playFull} disabled={playing}>
+          <button type="button" className="play" onClick={() => play('full')} disabled={playing}>
             <PlayIcon />
             Play
           </button>
-          <button type="button" className="play ghost" onClick={playSlow} disabled={playing}>
+          <button type="button" className="play ghost" onClick={() => play('slow')} disabled={playing}>
             Slowly
           </button>
         </div>
